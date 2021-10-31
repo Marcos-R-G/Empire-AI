@@ -1365,7 +1365,7 @@ def GOAL(s): # -> True/False |evaluate model in State s and determine if goal ha
 def openmodel():
     sectors = pickle.load(open("sectors.p", "rb"))
 
-    ships = pickle.load(open("ship_sectors.p.p", "rb"))
+    ships = pickle.load(open("ship_sectors.p", "rb"))
 
     m = Model(sectors, ships)
 
@@ -1374,7 +1374,7 @@ def openmodel():
     foutsector.close()
     # print("Sectors closed. ")
 
-    foutship = open("ship_sectors.p.p", "wb")
+    foutship = open("ship_sectors.p", "wb")
     pickle.dump(m.ship_sectors, foutship)
     foutship.close()
 
@@ -1397,7 +1397,7 @@ def main():
     foutsector.close()
     # print("Sectors closed. ")
 
-    foutship = open("ship_sectors.p.p", "wb")
+    foutship = open("ship_sectors.p", "wb")
     pickle.dump(m.ship_sectors, foutship)
     foutship.close()
     # print("Ships closed. ")
