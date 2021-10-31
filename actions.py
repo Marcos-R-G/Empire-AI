@@ -1333,6 +1333,7 @@ def ACTION(s):
     #   Update
     update = action("Update", {"update": []})
     if len(actions) < 1:
+
         actions.append(update)  # ADD TO ACTION LIST
 
     return actions
