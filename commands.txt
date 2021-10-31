@@ -1,0 +1,1475 @@
+Sectors loaded into dictionary. 
+Ships loaded into dictionary. 
+1000.0
+250
+500
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+250
+1000.0
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+Not enough iron in (2, 0) for distribute. 
+Not enough food in (2, 0) for distribute. 
+update
+update
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+des 2,0 c
+des 0,-2 h
+des 0,2 m
+des -1,1 j
+des 3,1 k
+des -1,-1 a
+des 1,-1 a
+des -2,0 a
+des 1,1 a
+Exceeded 100 actions.
