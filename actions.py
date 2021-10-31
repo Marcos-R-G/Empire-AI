@@ -546,11 +546,7 @@ class Model:
 
         for sec in self.sectors:
             for com in self.mTrackedCommodities:
-                # test for key error
-                # print("Sec: ", sec)
-                # print("Com: ", com)
-                # print("Tracked.com: ", self.mTrackedCommodities[com])
-                # print("All: ", self.mSectors[sec][self.mTrackedCommodities[com]])
+
                 thresh = float(self.sectors[sec][self.mTrackedCommodities[com]])
                 if thresh > 0:
                     item = com
@@ -974,107 +970,371 @@ class action():
     #         print("invalid state action")
 
 
-def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
+def ACTION(s):
+    # m = s.mModel
+    # actions = []
+    # # update, no parameters, no logic
+    # update = action("Update", {"update": []})
+    # actions.append(update)
+    #
+    # # designate strategy 1, mine, light, heavy, harbor, capital, 5 agri
+    # highestMin = 0
+    # lowestFert = 10000
+    # noLowest = True
+    # seclist = []
+    # noharbor = True
+    # for sector in m.sectors:
+    #     if m.sectors[sector]["des"] == m.mTrackedDesignations["c"]:
+    #         des1capital = sector
+    #     elif m.sectors[sector]["coastal"] == "1" and noharbor:
+    #         des1harbor = sector
+    #         noharbor = False
+    #     else:
+    #         seclist.append(sector)
+    # # ----------------------------------------------------------------------------------------------------------------------------------
+    #
+    # des1mine = seclist[6]
+    # des1lightfactory = seclist[3]
+    # des1heavyfactory = seclist[5]
+    # des1agri1 = seclist[0]
+    # des1agri2 = seclist[1]
+    # des1agri3 = seclist[2]
+    # des1agri5 = seclist[4]
+    #
+    #
+    # designate1 = action("Designate1", {"designate1": [des1capital, "c"], "designate2": [des1harbor, "h"],
+    #                                    "designate3": [des1mine, "m"], "designate4": [des1lightfactory, "j"],
+    #                                    "designate5": [des1heavyfactory, "k"], "designate6": [des1agri1, "a"],
+    #                                    "designate7": [des1agri2, "a"], "designate8": [des1agri3, "a"],
+    #                                     "designate0": [des1agri5, "a"], })
+    #
+    # actions.append(designate1)
+    #
+    # found1 = False
+    # found2 = False
+    # found = False
+    # for sector in m.sectors:
+    #     if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+    #         print("test")
+    #         harbor = sector
+    #         found1 = True
+    #         if found1 and found2:
+    #             found = True
+    #
+    #     if m.sectors[sector]["des"] == m.mTrackedDesignations["a"]:
+    #         found2 = True
+    #         if found1 and found2:
+    #             found = True
+    # if found1 and found2:
+    #     found = True
+    # if found:
+    #
+    #     seclist = []
+    #     for sector in m.sectors:
+    #         if m.sectors[sector]["des"] == "5":
+    #             scapital = sector
+    #         else:
+    #             seclist.append(sector)
+    #     spread1 = action("Spread1",
+    #                      {"move": ["food", scapital, 100, seclist[0]], "move": ["food", scapital, 100, seclist[1]],
+    #                       "move": ["food", scapital, 100, seclist[2]], "move": ["food", scapital, 100, seclist[3]],
+    #                       "move": ["food", scapital, 100, seclist[4]], "move": ["food", scapital, 100, seclist[5]],
+    #                       "move": ["food", scapital, 100, seclist[6]], "move": ["food", scapital, 100, seclist[7]],
+    #                       "move": ["civil", scapital, 100, seclist[0]],
+    #                       "move": ["civil", scapital, 100, seclist[1]], "move": ["civil", scapital, 100, seclist[2]],
+    #                       "move": ["civil", scapital, 100, seclist[3]], "move": ["civil", scapital, 100, seclist[4]],
+    #                       "move": ["civil", scapital, 100, seclist[5]], "move": ["civil", scapital, 100, seclist[6]],
+    #                       "move": ["civil", scapital, 100, seclist[7]]})
+    #
+    #     actions.append(designate1)
+    #
+    #     # network strat 1 for designate strat 1, set threshold 1 for producers, food thresholds for all to 500, distribute to harbor
+    #     network1 = action("Network1", {"distribute": [des1harbor], "threshold1": ["food", des1agri1, 500],
+    #                                    "threshold2": ["food", des1agri2, 500], "threshold3": ["food", des1agri3, 500],
+    #                                    "threshold5": ["food", des1agri5, 500],
+    #                                    "threshold6": ["food", des1mine, 500], "threshold7": ["food", des1capital, 500],
+    #                                    "threshold8": ["food", des1lightfactory, 500],
+    #                                    "threshold9": ["food", des1heavyfactory, 500],
+    #                                    "threshold0": ["iron", des1heavyfactory, 500],
+    #                                    "thresholda": ["iron", des1lightfactory, 500],
+    #                                    "thresholdb": ["iron", des1mine, 1], "thresholdc": ["lcm", des1lightfactory, 1],
+    #                                    "thresholdd": ["hcm", des1heavyfactory, 1]})
+    #     actions.append(network1)
+    #     # network strat 2 for designate strat 2
+    #     network2 = action("Network2", {})  # future implementation
+    #     # builds fishing boat in harbor
+    #     for sector in m.sectors:
+    #         if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+    #             harbor = sector
+    #             found = True
+    #     if found:
+    #         buildfishingboat = action("BuildFishingBoat", {"build_ship": [harbor, "fb"]})
+    #         if int(float(m.sectors[harbor]["hcm"])) >= m.mShipTypes["fb"]["hcm"] and int(
+    #                 float(m.sectors[harbor]["lcm"])) >= m.mShipTypes["fb"]["lcm"]:
+    #             actions.append(buildfishingboat)
+    #         # builds a frigate in the harbor
+    # return actions
     m = s.mModel
     actions = []
-    # update, no parameters, no logic
-    update = action("Update", {"update": []})
-    actions.append(update)
 
-    # designate strategy 1, mine, light, heavy, harbor, capital, 5 agri
-    highestMin = 0
-    lowestFert = 10000
-    noLowest = True
-    seclist = []
-    noharbor = True
-    for sector in m.sectors:
-        if m.sectors[sector]["des"] == m.mTrackedDesignations["c"]:
-            des1capital = sector
-        elif m.sectors[sector]["coastal"] == "1" and noharbor:
-            des1harbor = sector
-            noharbor = False
-        else:
-            seclist.append(sector)
-    # ----------------------------------------------------------------------------------------------------------------------------------
+    sector_list = []
 
-    des1mine = seclist[6]
-    des1lightfactory = seclist[3]
-    des1heavyfactory = seclist[5]
-    des1agri1 = seclist[0]
-    des1agri2 = seclist[1]
-    des1agri3 = seclist[2]
-    des1agri5 = seclist[4]
+    #   Designate1 OLD
+    # need_designate1 = True
+    # allow_designate1 = True
+    # city1 = 0
+    # city2 = 0
+    # city1_found = False
+    # harbor_found = False
+    # for sector in m.mSectors:
+    #    if m.mSectors[sector]["des"] == m.mTrackedDesignations["h"]:
+    #        need_designate1 = False
+    # for sector in m.mSectors:
+    #    if m.mSectors[sector]["des"] == m.mTrackedDesignations["c"] and not city1_found:
+    #        city1 = sector
+    #        city1_found = True
+    #    elif m.mSectors[sector]["des"] == m.mTrackedDesignations["c"] and city1_found:
+    #        city2 = sector
+    #    elif m.mSectors[sector]["coastal"] == "1" and not harbor_found:
+    #        harbor = sector
+    #        harbor_found = True
+    #    else:
+    #        sector_list.append(sector)
+    # mine1 = sector_list[0]
+    # mine2 = sector_list[1]
+    # light = sector_list[2]
+    # heavy = sector_list[3]
+    # farm1 = sector_list[4]
+    # farm2 = sector_list[5]
+    # farm3 = sector_list[6]
 
+    # designate1 = Action("Designate1", {"designate2":[harbor, "h"], "designate3":[mine1, "m"], "designate4":[mine2, "m"], "designate5":[light, "j"], "designate6":[heavy, "k"], "designate7":[farm1, "a"], "designate8":[farm2, "a"], "designate9":[farm3, "a"]})
+    # if allow_designate1 and need_designate1:
+    #    actions.append(designate1) #ADDS TO ACTION LIST
 
-    designate1 = action("Designate1", {"designate1": [des1capital, "c"], "designate2": [des1harbor, "h"],
-                                       "designate3": [des1mine, "m"], "designate4": [des1lightfactory, "j"],
-                                       "designate5": [des1heavyfactory, "k"], "designate6": [des1agri1, "a"],
-                                       "designate7": [des1agri2, "a"], "designate8": [des1agri3, "a"],
-                                        "designate0": [des1agri5, "a"], })
-    actions.append(designate1)
-
-    found1 = False
-    found2 = False
-    found = False
+    #   Designate1
+    need_designate1 = True
+    allow_designate1 = True
+    city1 = 0
+    city2 = 0
+    harbor = 0
+    farm1 = 0
+    farm2 = 0
+    farm3 = 0
+    mine1 = 0
+    mine2 = 0
+    light = 0
+    heavy = 0
+    city1_found = False
+    harbor_found = False
+    onefarm = False
+    twofarm = False
+    onemine = False
     for sector in m.sectors:
         if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+            need_designate1 = False
             harbor = sector
-            found1 = True
-            if found1 and found2:
-                found = True
-        if m.sectors[sector]["des"] == m.mTrackedDesignations["a"]:
-            found2 = True
-            if found1 and found2:
-                found = True
-    if found1 and found2:
-        found = True
-    if found:
-        # spread strat 1, 100 civs to each, 100 food to each
-        seclist = []
-        for sector in m.sectors:
-            if m.sectors[sector]["des"] == "5":
-                scapital = sector
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["a"]:
+            if twofarm:
+                farm3 = sector
+            elif onefarm:
+                farm2 = sector
+                twofarm = True
             else:
-                seclist.append(sector)
-        spread1 = action("Spread1",
-                         {"move": ["food", scapital, 100, seclist[0]], "move": ["food", scapital, 100, seclist[1]],
-                          "move": ["food", scapital, 100, seclist[2]], "move": ["food", scapital, 100, seclist[3]],
-                          "move": ["food", scapital, 100, seclist[4]], "move": ["food", scapital, 100, seclist[5]],
-                          "move": ["food", scapital, 100, seclist[6]], "move": ["food", scapital, 100, seclist[7]],
-                          "move": ["civil", scapital, 100, seclist[0]],
-                          "move": ["civil", scapital, 100, seclist[1]], "move": ["civil", scapital, 100, seclist[2]],
-                          "move": ["civil", scapital, 100, seclist[3]], "move": ["civil", scapital, 100, seclist[4]],
-                          "move": ["civil", scapital, 100, seclist[5]], "move": ["civil", scapital, 100, seclist[6]],
-                          "move": ["civil", scapital, 100, seclist[7]]})
-        # actions.append(spread1)
-        # spread strat 2, 25 civs to each, 50 food to each, city keeps rest
-        spread2 = action("Spread2", {})  # future implementation
+                need_designate1 = False
+                farm1 = sector
+                onefarm = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["m"]:
+            if onemine:
+                mine2 = sector
+            else:
+                need_designate1 = False
+                mine1 = sector
+                onemine = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["j"]:
+            need_designate1 = False
+            light = sector
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["k"]:
+            need_designate1 = False
+            heavy = sector
 
-        # network strat 1 for designate strat 1, set threshold 1 for producers, food thresholds for all to 500, distribute to harbor
-        network1 = action("Network1", {"distribute": [des1harbor], "threshold1": ["food", des1agri1, 500],
-                                       "threshold2": ["food", des1agri2, 500], "threshold3": ["food", des1agri3, 500],
-                                       "threshold5": ["food", des1agri5, 500],
-                                       "threshold6": ["food", des1mine, 500], "threshold7": ["food", des1capital, 500],
-                                       "threshold8": ["food", des1lightfactory, 500],
-                                       "threshold9": ["food", des1heavyfactory, 500],
-                                       "threshold0": ["iron", des1heavyfactory, 500],
-                                       "thresholda": ["iron", des1lightfactory, 500],
-                                       "thresholdb": ["iron", des1mine, 1], "thresholdc": ["lcm", des1lightfactory, 1],
-                                       "thresholdd": ["hcm", des1heavyfactory, 1]})
-        actions.append(network1)
-        # network strat 2 for designate strat 2
-        network2 = action("Network2", {})  # future implementation
-        # builds fishing boat in harbor
-        for sector in m.sectors:
-            if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+    for sector in m.sectors:
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["c"] and not city1_found:
+            city1 = sector
+            city1_found = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["c"] and city1_found:
+            city2 = sector
+        else:
+            sector_list.append(sector)
+
+    if need_designate1 and allow_designate1:
+        coastal_list = []
+        for sector in sector_list:
+            if m.mSectors[sector]["coastal"] == "1":
+                coastal_list.append(sector)
+
+        resources = 2000000000.0
+
+        for sector in coastal_list:
+            if float(m.mSectors[sector]["min"]) + float(m.mSectors[sector]["fert"]) < resources:
                 harbor = sector
-                found = True
-        if found:
-            buildfishingboat = action("BuildFishingBoat", {"build_ship": [harbor, "fb"]})
-            if int(float(m.sectors[harbor]["hcm"])) >= m.mShipTypes["fb"]["hcm"] and int(
-                    float(m.sectors[harbor]["lcm"])) >= m.mShipTypes["fb"]["lcm"]:
-                actions.append(buildfishingboat)
-            # builds a frigate in the harbor
+                resources = float(m.mSectors[sector]["min"]) + float(m.mSectors[sector]["fert"])
+                harbor_found = True
+
+        for i in range(len(sector_list)):
+            if sector_list[i] == harbor:
+                index = i
+
+        sector_list.pop(index)
+
+        fert = 0
+
+        for i in range(len(sector_list)):
+            if float(m.mSectors[sector_list[i]]["fert"]) > fert:
+                fert = float(m.mSectors[sector_list[i]]["fert"])
+                farm1 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        min = 0
+
+        for i in range(len(sector_list)):
+            if float(m.mSectors[sector_list[i]]["min"]) > min:
+                fert = float(m.mSectors[sector_list[i]]["min"])
+                mine1 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        fert = 0
+
+        for i in range(len(sector_list)):
+            if float(m.mSectors[sector_list[i]]["fert"]) > fert:
+                fert = float(m.mSectors[sector_list[i]]["fert"])
+                farm2 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        min = 0
+
+        for i in range(len(sector_list)):
+            if float(m.mSectors[sector_list[i]]["min"]) > min:
+                fert = float(m.mSectors[sector_list[i]]["min"])
+                mine2 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        fert = 0
+
+        for i in range(len(sector_list)):
+            if float(m.mSectors[sector_list[i]]["fert"]) > fert:
+                fert = float(m.mSectors[sector_list[i]]["fert"])
+                farm3 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        light = sector_list[0]
+        heavy = sector_list[1]
+
+        designate1 = action("Designate1",
+                            {"designate2": [harbor, "h"], "designate3": [mine1, "m"], "designate4": [mine2, "m"],
+                             "designate5": [light, "j"], "designate6": [heavy, "k"], "designate7": [farm1, "a"],
+                             "designate8": [farm2, "a"], "designate9": [farm3, "a"]})
+        if allow_designate1 and need_designate1:
+            actions.append(designate1)  # ADDS TO ACTION LIST
+
+    #   Spread1
+    allow_spread1 = False
+    harbor_exists = False
+    need_spread1 = False
+    need_list = []
+    for sector in m.sectors:
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+            harbor_exists = True
+        if float(m.sectors[sector]["civil"]) < 50.0:
+            need_spread1 = True
+            need_list.append(sector)
+    if harbor_exists:
+        if float(m.sectors[city1]["food"]) > 200 and float(m.mSectors[city1]["civil"]) > 300 and float(
+                m.sectors[city2]["food"]) > 200 and float(m.mSectors[city2]["civil"]) > 300:
+            allow_spread1 = True
+
+    indices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
+
+    if allow_spread1:
+        spread1_innards = {}
+        for i in range(len(need_list)):
+            if i < 4:
+                key = "move" + str(i)
+                spread1_innards[key] = ["food", city1, 20, need_list[i]]
+                key = "move" + indices[i]
+                spread1_innards[key] = ["civil", city1, 50, need_list[i]]
+            else:
+                key = "move" + str(i)
+                spread1_innards[key] = ["food", city2, 20, need_list[i]]
+                key = "move" + indices[i]
+                spread1_innards[key] = ["civil", city2, 50, need_list[i]]
+        spread1 = action("Spread1", spread1_innards)
+    if allow_spread1 and need_spread1:
+        actions.append(spread1)  # ADDS TO ACTION LIST
+
+    #   Network1
+    allow_network1 = False
+    harbor_exists = False
+    need_network1 = False
+    for sector in m.sectors:
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+            harbor_exists = True
+            check_harb = sector
+    if harbor_exists:
+        for sector in m.sectors:
+            if m.sectors[sector]["des"] != m.mTrackedDesignations["h"]:
+                if m.sectors[sector]["xdist"] != m.sectors[check_harb]["xloc"] or m.sectors[sector]["ydist"] != \
+                        m.sectors[check_harb]["yloc"]:
+                    need_network1 = True
+
+    if harbor_exists:
+        allow_network1 = True
+        network1 = action("Network1", {"distribute": [harbor], "threshold1": ["food", farm1, 500],
+                                       "threshold2": ["food", farm2, 500], "threshold3": ["food", farm3, 500],
+                                       "threshold4": ["food", mine1, 500], "threshold5": ["food", mine2, 500],
+                                       "threshold6": ["food", light, 500], "threshold7": ["food", heavy, 500],
+                                       "threshold8": ["food", city1, 500], "threshold9": ["food", city2, 500],
+                                       "threshold0": ["iron", light, 100], "thresholda": ["iron", heavy, 200],
+                                       "thresholdb": ["iron", mine1, 1], "thresholdz": ["iron", mine2, 1],
+                                       "thresholdc": ["lcm", light, 1], "thresholdd": ["hcm", heavy, 1]})
+    if allow_network1 and need_network1:
+        actions.append(network1)  # ADDS TO ACTION LIST
+
+    #   BuildFishingBoat
+    allow_buildfishingboat = False
+    harbor_exists = False
+    for sector in m.sectors:
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+            harbor_exists = True
+            build_harb = sector
+
+    if harbor_exists:
+        if float(m.sectors[build_harb]["lcm"]) >= m.mShipTypes["fb"]["lcm"] and float(m.mSectors[build_harb]["hcm"]) >= \
+                m.mShipTypes["fb"]["hcm"]:
+            allow_buildfishingboat = True
+
+    if allow_buildfishingboat:
+        buildfishingboat = action("BuildFishingBoat", {"build_ship": [harbor, "fb"]})
+    if allow_buildfishingboat:
+        weight = 100
+        for i in range(weight):
+            actions.append(buildfishingboat)  # ADDS TO ACTION LIST
+
+    #   Update
+    update = action("Update", {"update": []})
+    if len(actions) < 1:
+        actions.append(update)  # ADD TO ACTION LIST
+
     return actions
 
 def RESULT(s1, a):
@@ -1086,58 +1346,6 @@ def RESULT(s1, a):
     return s2
 
 
-# def result(state_1, actions_list, arriving_action):
-#     model_copy = copy.deepcopy(state_1.model)
-#     primitives = []
-#     if len(actions_list) > 0:
-#         for action in actions_list:
-#             if arriving_action != "update":
-#                 p = action.run(model_copy)
-#                 if p != None:
-#                     primitives.append(p)
-#             else:
-#                 p = action.run(model_copy)
-#                 primitives.append("UPDATE")
-#     else:
-#         primitives = []
-#
-#     state_2 = State(model_copy, state_1, primitives, arriving_action,
-#                     self.step_cost(arriving_action, len(actions_list)))
-#     return state_2
-
-# def search(initial_state):
-#   Q = []
-#   Q.append(initial_state)
-#   while len(Q) != 0:
-#     s = Q.pop()
-#     m = State()
-#     if m.goal(s):
-#       return s
-#     for a in ACTION(s):
-#       Q.insert(0, RESULT(a))
-#   return
-
-
-# def find_goal_state():
-#     initial_model = Model(sectors, ship_sectors)
-#     initial_state = State()
-#     g = search(initial_state)
-#     instructions = []
-#
-#     print("COMMANDS:")
-#     print()
-#     print()
-#     while g.parent_state != None:
-#         for a in g.primitives[::-1]:
-#             instructions.insert(0, a)
-#             # print(a)
-#         g = g.parent_state
-#
-#     for instr in instructions:
-#         if instr == "UPDATE":
-#             break
-#         else:
-#             print(instr)
 def GOAL(s): # -> True/False |evaluate model in State s and determine if goal has been reached
     sectors = False # needs 10 sectors to pass
     starvation = True # false is passing, needs to not have starvation
