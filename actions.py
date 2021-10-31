@@ -436,15 +436,16 @@ class Model:
                         self.sectors[sec]["iron"] = "9999"
                     elif float(self.sectors[sec]["iron"]) < 0:
                         self.sectors[sec]["iron"] = "0"
-                    print(float(self.sectors[sec]["iron"]))
-                    materials = math.floor(float(self.sectors[sec]["iron"]) / 2)
+                    # if UPDATE_PRINTS_ALLOWED:
+                    #     print(float(self.mSectors[sec]["iron"]))
+                    # materials = math.floor(float(self.sectors[sec]["iron"]) / 2)
                     # materials = float(self.mSectors[sec]["iron"]) / 2
                     consumed = 0
-                    if possible_from_workers < materials:
-                        consumed = possible_from_workers
-                    else:
-                        consumed = materials
-                    output = consumed * eff
+                    # if possible_from_workers < materials:
+                    #     consumed = possible_from_workers
+                    # else:
+                    #     consumed = materials
+                    # output = consumed * eff
                     self.sectors[sec]["iron"] = str(float(self.sectors[sec]["iron"]) - output)
                     self.sectors[sec]["hcm"] = str(float(self.sectors[sec]["hcm"]) - output)
                     if eff > 0:
@@ -462,14 +463,14 @@ class Model:
                         self.sectors[sec]["iron"] = "9999"
                     elif float(self.sectors[sec]["iron"]) < 0:
                         self.sectors[sec]["iron"] = "0"
-                    materials = math.floor(float(self.sectors[sec]["iron"]) / 2)
-                    print(materials)
+                    # materials = math.floor(float(self.sectors[sec]["iron"]) / 2)
+                    # print(materials)
                     consumed = 0
-                    if possible_from_workers < materials:
-                        consumed = possible_from_workers
-                    else:
-                        consumed = materials
-                    output = consumed * eff
+                    # if possible_from_workers < materials:
+                    #     consumed = possible_from_workers
+                    # else:
+                    #     consumed = materials
+                    # output = consumed * eff
                     self.sectors[sec]["iron"] = str(float(self.sectors[sec]["iron"]) - output)
                     self.sectors[sec]["lcm"] = str(float(self.sectors[sec]["lcm"]) - output)
                     if eff > 0:

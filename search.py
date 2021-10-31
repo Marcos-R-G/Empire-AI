@@ -1,28 +1,10 @@
 import actions
-from actions import action
-from actions import State
-from actions import Model
-import random
-# def search(initial_state, limit):
-#   Q = []
-#   Q.append(initial_state)
-#   while len(Q) != 0:
-#     s = Q.pop()
-#     # m = Model_Actions()
-#     if actions.GOAL(s):
-#       return s
-#     if s.depth >= limit:
-#         continue
-#     for a in actions.ACTION(s):
-#       Q.insert(actions.RESULT(s,a))
-#
-#   return
+
 
 def search(initial_state, limit):
 
     sz = []
     sz.append(initial_state)
-    astate = actions.ACTION(initial_state)
     i = 0
 
     while len(sz) > 0:
