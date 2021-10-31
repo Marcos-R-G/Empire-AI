@@ -37,7 +37,7 @@ def search(initial_state, limit):
             print("Exceeded 100 actions.")
             return s
         for a in actions.ACTION(s):
-            sz.append(actions.RESULT(s,a))
+            #sz.append(actions.RESULT(s,a))
 
             if a.mGroup == "Designate1":
                 actions.DESIGNATE_USED = True
