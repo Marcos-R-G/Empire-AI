@@ -37,12 +37,16 @@ def search(initial_state, limit):
             print("Exceeded 100 actions.")
             return s
         for a in actions.ACTION(s):
+<<<<<<< HEAD
             #sz.append(actions.RESULT(s,a))
 
+=======
+>>>>>>> 9aac52899bb88a88bb2c859bde1a7f155cb856d3
             if a.mGroup == "Designate1":
                 actions.DESIGNATE_USED = True
                 for command in a.mCommands:
                     print("des", actions.change_tuple_to_string(a.mCommands[command][0]), a.mCommands[command][1])
+
             elif a.mGroup == "Network1":
                 actions.NETWORK_USED = True
                 for command in a.mCommands:
@@ -63,8 +67,6 @@ def search(initial_state, limit):
                               str(a.mCommands[command][1]))
                     else:
                         print("update")
-
-
 
     return
 
