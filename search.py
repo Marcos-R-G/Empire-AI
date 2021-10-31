@@ -62,6 +62,7 @@ def search(initial_state, limit):
                               str(a.mCommands[command][1]))
                     else:
                         print("update")
+                        print("cens *")
 
     return
 
