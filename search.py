@@ -1,11 +1,44 @@
 import actions
-
-
+from actions import action
+from actions import State
+from actions import Model
+import random
+# def search(initial_state, limit):
+#   Q = []
+#   Q.append(initial_state)
+#   while len(Q) != 0:
+#     s = Q.pop()
+#     # m = Model_Actions()
+#     if actions.GOAL(s):
+#       return s
+#     if s.depth >= limit:
+#         continue
+#     for a in actions.ACTION(s):
+#       Q.insert(actions.RESULT(s,a))
+#
+#   return
 def search(initial_state, limit):
+    # Q = []
+    # Q.append(initial_state)
+    # while len(Q) != 0:
+    #     s = Q.pop()
+    #     initial_state.depth += 1
+    #     # m = Model_Actions()
+    #     if actions.GOAL(s):
+    #         # print(s.depth)
+    #         print("goal reached")
+    #         return s
+    #     # break
+    #     if s.depth >= limit:
+    #         print("max depth reached", s.depth)
+    #         continue
+    #     for a in actions.ACTION(s):
+    #         Q.append((0, actions.RESULT(s,a)))
+    #
+    # return
 
     sz = []
     sz.append(initial_state)
-    i = 0
 
     while len(sz) > 0:
         initial_state.depth += 1
@@ -20,10 +53,14 @@ def search(initial_state, limit):
             return s
         for a in actions.ACTION(s):
 <<<<<<< HEAD
+<<<<<<< HEAD
             #sz.append(actions.RESULT(s,a))
 
 =======
 >>>>>>> 9aac52899bb88a88bb2c859bde1a7f155cb856d3
+=======
+            # sz.append(actions.RESULT(s,a))
+>>>>>>> d44e240195327e511c9aa94b62b7a11be5487ac6
             if a.mGroup == "Designate1":
                 actions.DESIGNATE_USED = True
                 for command in a.mCommands:
@@ -35,7 +72,8 @@ def search(initial_state, limit):
                     if command == "distribute":
                         print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
                     else:
-                        print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
+                        print("threshold", a.mCommands[command][0],
+                              actions.change_tuple_to_string(a.mCommands[command][1]),
                               a.mCommands[command][2])
             elif a.mGroup == "Spread1":
                 actions.SPREAD_USED = True
@@ -50,6 +88,8 @@ def search(initial_state, limit):
                     else:
                         print("update")
                         print("cens *")
+
+
 
     return
 
@@ -93,3 +133,34 @@ def main():
     return
 
 main()
+<<<<<<< HEAD
+=======
+#
+# for a in actions.ACTION(s):
+#     if a.mGroup == "Designate1":
+#         actions.DESIGNATE_USED = True
+#         for command in a.mCommands:
+#             print("des", actions.change_tuple_to_string(a.mCommands[command][0]), a.mCommands[command][1])
+#
+#     elif a.mGroup == "Network1":
+#         actions.NETWORK_USED = True
+#         for command in a.mCommands:
+#             if command == "distribute":
+#                 print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
+#             else:
+#                 print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
+#                       a.mCommands[command][2])
+#     elif a.mGroup == "Spread1":
+#         actions.SPREAD_USED = True
+#         for command in a.mCommands:
+#             print("move", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
+#                   a.mCommands[command][2], actions.change_tuple_to_string(a.mCommands[command][3]))
+#     else:
+#         for command in a.mCommands:
+#             if command == "build_ship":
+#                 print("build ship", actions.change_tuple_to_string(a.mCommands[command][0]),
+#                       str(a.mCommands[command][1]))
+#             else:
+#                 print("update")
+#                 print("cens *")
+>>>>>>> d44e240195327e511c9aa94b62b7a11be5487ac6
