@@ -7,13 +7,19 @@ def search(s1):
     depth = 0
     sz = []
     sz.append(s1)
-
+    #s = sz[0]
+    #az = state.ACTION(s)
+    #for i in range(len(az)):
+    #    if az[i].getGroup == "Designate1":
+    #        s = sz.pop()
+    #        s2 = state.RESULT(s, az[pickl])
+    #        sz.append(s2)
     while len(sz) > 0:
         depth += 1
         s = sz.pop()
         az = actions.ACTION(s)
 
-        if actions.GOAL(s):
+        if actions.GOAL(s) == True:
             print("GOAL state reached! ")
             return s
         if depth > depth_limit:
@@ -22,9 +28,6 @@ def search(s1):
 
         pick = random.randrange(0,len(az))
         a = az[pick]
-
-        print(a.getGroup())
-
         s2 = actions.RESULT(s, a)
         sz.append(s2)
 
@@ -49,7 +52,7 @@ def search(s1):
                     print("build ship", actions.change_tuple_to_string(a.mCommands[command][0]), str(a.mCommands[command][1]))
                 else:
                     print("update")
-                    # print("cens *")
+                    print("cens *")
     return
 
 def main():

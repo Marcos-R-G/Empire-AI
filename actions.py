@@ -6,6 +6,9 @@ import pickle
 import math
 import copy
 
+SPREAD_USED = False
+DESIGNATE_USED = False
+NETWORK_USED = False
 
 
 f = open("sectors.p", "rb")
@@ -208,7 +211,7 @@ class Model:
         self.sectors[sect]["lcm"] = str(new_lcm)
         self.sectors[sect]["hcm"] = str(new_hcm)
 
-        self.mBuiltShip = True
+        self.mHasShip = True
         return True
 
 
@@ -569,20 +572,31 @@ class action:
 
     def apply(self, model):
         if self.mGroup == "Designate1":
+            DESIGNATE_USED = True
             for command in self.mCommands:
                 getattr(model, command[:-1])(*self.mCommands[command])
+                # print("des", change_tuple_to_string(self.mCommands[command][0]), self.mCommands[command][1])
         elif self.mGroup == "Network1":
+            NETWORK_USED = True
             for command in self.mCommands:
                 if command == "distribute":
                     getattr(model, command)(*self.mCommands[command])
+                    # print("distribute", "*", change_tuple_to_string(self.mCommands[command][0]))
                 else:
                     getattr(model, command[:-1])(*self.mCommands[command])
+                    # print("threshold", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2])
         elif self.mGroup == "Spread1":
+            SPREAD_USED = True
             for command in self.mCommands:
                 getattr(model, command[:-1])(*self.mCommands[command])
+                # print("move", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2], change_tuple_to_string(self.mCommands[command][3]))
         else:
             for command in self.mCommands:
+                ##print(command)
+                ##print(*self.mCommands[command])
                 getattr(model, command)(*self.mCommands[command])
+                # if command == "build_ship":
+
         return model
 
     def getGroup(self):
@@ -609,6 +623,39 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
     actions = []
 
     sector_list = []
+
+    #   Designate1 OLD
+    # need_designate1 = True
+    # allow_designate1 = True
+    # city1 = 0
+    # city2 = 0
+    # city1_found = False
+    # harbor_found = False
+    # for sector in m.mSectors:
+    #    if m.mSectors[sector]["des"] == m.mTrackedDesignations["h"]:
+    #        need_designate1 = False
+    # for sector in m.mSectors:
+    #    if m.mSectors[sector]["des"] == m.mTrackedDesignations["c"] and not city1_found:
+    #        city1 = sector
+    #        city1_found = True
+    #    elif m.mSectors[sector]["des"] == m.mTrackedDesignations["c"] and city1_found:
+    #        city2 = sector
+    #    elif m.mSectors[sector]["coastal"] == "1" and not harbor_found:
+    #        harbor = sector
+    #        harbor_found = True
+    #    else:
+    #        sector_list.append(sector)
+    # mine1 = sector_list[0]
+    # mine2 = sector_list[1]
+    # light = sector_list[2]
+    # heavy = sector_list[3]
+    # farm1 = sector_list[4]
+    # farm2 = sector_list[5]
+    # farm3 = sector_list[6]
+
+    # designate1 = Action("Designate1", {"designate2":[harbor, "h"], "designate3":[mine1, "m"], "designate4":[mine2, "m"], "designate5":[light, "j"], "designate6":[heavy, "k"], "designate7":[farm1, "a"], "designate8":[farm2, "a"], "designate9":[farm3, "a"]})
+    # if allow_designate1 and need_designate1:
+    #    actions.append(designate1) #ADDS TO ACTION LIST
 
     #   Designate1
     need_designate1 = True
@@ -668,7 +715,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
     if need_designate1 and allow_designate1:
         coastal_list = []
         for sector in sector_list:
-            if m.sectors[sector]["coastal"] == "1":
+            if m.mSectors[sector]["coastal"] == "1":
                 coastal_list.append(sector)
 
         resources = 2000000000.0
@@ -869,7 +916,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
     #   Update
     update = action("Update", {"update": []})
     if len(actions) < 1:
-        actions.append(update)  # ADD TO ACTION LIST
+        actions.append(update)
 
     return actions
 
@@ -879,14 +926,12 @@ def GOAL(s):
     starvation = True  # false is passing, needs to not have starvation
     built_ship = False  # needs to build a ship to pass
 
-    if len(s.mModel.sectors) >= 10:
-        sectors = True
-    starvation = s.mModel.mStarvation
+    # starvation = s.mModel.mStarvation
     built_ship = s.mModel.mHasShip
 
     starvation = False
 
-    if sectors and built_ship and not starvation:
+    if built_ship:
         return True
     else:
         return False
