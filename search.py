@@ -7,13 +7,7 @@ def search(s1):
     depth = 0
     sz = []
     sz.append(s1)
-    #s = sz[0]
-    #az = state.ACTION(s)
-    #for i in range(len(az)):
-    #    if az[i].getGroup == "Designate1":
-    #        s = sz.pop()
-    #        s2 = state.RESULT(s, az[pickl])
-    #        sz.append(s2)
+
     while len(sz) > 0:
         depth += 1
         s = sz.pop()
@@ -26,9 +20,10 @@ def search(s1):
             print("Exceeded depth limit without finding goal state.  Failure. ")
             return s
 
-        pick = random.randrange(0,len(az))
+        pick = random.randrange(0, len(az))
         a = az[pick]
-        s2 = actions.RESULT(s, a)
+        # s2 = state.RESULT(s, a)
+        s2 = actions.RESULT(s,a)
         sz.append(s2)
 
         if a.mGroup == "Designate1":
@@ -41,11 +36,13 @@ def search(s1):
                 if command == "distribute":
                     print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
                 else:
-                    print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]), a.mCommands[command][2])
+                    print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
+                          a.mCommands[command][2])
         elif a.mGroup == "Spread1":
             SPREAD_USED = True
             for command in a.mCommands:
-                print("move", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]), a.mCommands[command][2], change_tuple_to_string(a.mCommands[command][3]))
+                print("move", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
+                      a.mCommands[command][2], actions.change_tuple_to_string(a.mCommands[command][3]))
         else:
             for command in a.mCommands:
                 if command == "build_ship":

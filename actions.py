@@ -927,12 +927,12 @@ def GOAL(s):
     starvation = True  # false is passing, needs to not have starvation
     built_ship = False  # needs to build a ship to pass
 
-    # starvation = s.mModel.mStarvation
+    if len(s.mModel.sectors) >= 10:
+        sectors = True
     built_ship = s.mModel.mHasShip
 
-    starvation = False
 
-    if built_ship:
+    if sectors and built_ship:
         return True
     else:
         return False
