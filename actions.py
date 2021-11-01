@@ -964,7 +964,7 @@ def RESULT(s1, a):
 def main():
     sectors = pickle.load(open("sectors.p", "rb"))
 
-    ships = pickle.load(open("ship_sectors.p.p", "rb"))
+    ships = pickle.load(open("ship_sectors.p", "rb"))
 
 
     m = Model(sectors, ships)
@@ -974,7 +974,7 @@ def main():
     pickle.dump(m.sectors, foutsector)
     foutsector.close()
 
-    foutship = open("ship_sectors.p.p", "wb")
+    foutship = open("ship_sectors.p", "wb")
     pickle.dump(m.ship_sectors, foutship)
     foutship.close()
     # print("Ships closed. ")
