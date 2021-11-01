@@ -124,34 +124,3 @@ def main():
     return
 
 main()
-<<<<<<< HEAD
-=======
-#
-# for a in actions.ACTION(s):
-#     if a.mGroup == "Designate1":
-#         actions.DESIGNATE_USED = True
-#         for command in a.mCommands:
-#             print("des", actions.change_tuple_to_string(a.mCommands[command][0]), a.mCommands[command][1])
-#
-#     elif a.mGroup == "Network1":
-#         actions.NETWORK_USED = True
-#         for command in a.mCommands:
-#             if command == "distribute":
-#                 print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
-#             else:
-#                 print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
-#                       a.mCommands[command][2])
-#     elif a.mGroup == "Spread1":
-#         actions.SPREAD_USED = True
-#         for command in a.mCommands:
-#             print("move", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
-#                   a.mCommands[command][2], actions.change_tuple_to_string(a.mCommands[command][3]))
-#     else:
-#         for command in a.mCommands:
-#             if command == "build_ship":
-#                 print("build ship", actions.change_tuple_to_string(a.mCommands[command][0]),
-#                       str(a.mCommands[command][1]))
-#             else:
-#                 print("update")
-#                 print("cens *")
->>>>>>> d44e240195327e511c9aa94b62b7a11be5487ac6
