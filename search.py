@@ -30,18 +30,15 @@ def search(s1):
         sz.append(s2)
 
         if a.mGroup == "Designate1":
-            DESIGNATE_USED = True
             for command in a.mCommands:
                 print("des", actions.change_tuple_to_string(a.mCommands[command][0]), a.mCommands[command][1])
         elif a.mGroup == "Network1":
-            NETWORK_USED = True
             for command in a.mCommands:
                 if command == "distribute":
                     print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
                 else:
                     print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]), a.mCommands[command][2])
         elif a.mGroup == "Spread1":
-            SPREAD_USED = True
             for command in a.mCommands:
                 print("move", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]), a.mCommands[command][2], change_tuple_to_string(a.mCommands[command][3]))
         else:
