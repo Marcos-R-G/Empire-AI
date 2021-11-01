@@ -44,12 +44,11 @@ def search(initial_state, limit):
         sz.append(s2)
 
         if a.mGroup == "Designate1":
-            actions.DESIGNATE_USED = True
+            DESIGNATE_USED = True
             for command in a.mCommands:
                 print("des", actions.change_tuple_to_string(a.mCommands[command][0]), a.mCommands[command][1])
-
         elif a.mGroup == "Network1":
-            actions.NETWORK_USED = True
+            NETWORK_USED = True
             for command in a.mCommands:
                 if command == "distribute":
                     print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
@@ -57,17 +56,17 @@ def search(initial_state, limit):
                     print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
                           a.mCommands[command][2])
         elif a.mGroup == "Spread1":
-            actions.SPREAD_USED = True
+            SPREAD_USED = True
             for command in a.mCommands:
                 print("move", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
                       a.mCommands[command][2], actions.change_tuple_to_string(a.mCommands[command][3]))
         else:
             for command in a.mCommands:
                 if command == "build_ship":
-                    print("build ship", actions.change_tuple_to_string(a.mCommands[command][0]),
-                          str(a.mCommands[command][1]))
+                    print("build ship", actions.change_tuple_to_string(a.mCommands[command][0]), str(a.mCommands[command][1]))
                 else:
                     print("update")
+                    print("cens *")
 
     return
 
@@ -105,7 +104,7 @@ def main():
     m = actions.openmodel()
     s1 = actions.State(None, None, m, 0)
 
-    search(s1,50)
+    search(s1,100)
     # print("fasdfjdsaks")
     # print(s1)
     return

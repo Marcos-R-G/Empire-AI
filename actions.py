@@ -5,7 +5,11 @@ import os
 import pickle
 import math
 import copy
-# import parse
+
+SPREAD_USED = False
+DESIGNATE_USED = False
+NETWORK_USED = False
+
 
 f = open("sectors.p", "rb")
 sectors = pickle.load(f)
@@ -14,6 +18,8 @@ f.close()
 f2 = open("ship_sectors.p", "rb")
 ship_sectors = pickle.load(f2)
 f.close()
+
+
 
 def dictAll(words):
     dictAll = {}
@@ -333,7 +339,7 @@ class Model:
                         self.sectors[sec]["iron"] = "9999"
                     elif float(self.sectors[sec]["iron"]) < 0:
                         self.sectors[sec]["iron"] = "0"
-                    print(float(self.sectors[sec]["iron"]))
+                    # print(float(self.sectors[sec]["iron"]))
                     materials = math.floor(float(self.sectors[sec]["iron"]) / 2)
                     # materials = float(self.sectors[sec]["iron"]) / 2
                     consumed = 0
@@ -360,7 +366,7 @@ class Model:
                     elif float(self.sectors[sec]["iron"]) < 0:
                         self.sectors[sec]["iron"] = "0"
                     materials = math.floor(float(self.sectors[sec]["iron"]) / 2)
-                    print(materials)
+                    # print(materials)
                     consumed = 0
                     if possible_from_workers < materials:
                         consumed = possible_from_workers
@@ -472,16 +478,16 @@ class Model:
                             else:
                                 nmob = secmob - mcost
                                 new_amount = current - diff
-                                if new_amount < 0:
-                                    print("Not enough", item, "in", dist, "for distribute. ")
-                                else:
-                                    self.sectors[dist][item] = str(new_amount)
-                                    self.sectors[dist]["mobil"] = str(nmob)
-                                    dist_current = float(self.sectors[sec][item])
-                                    new_dist_amount = dist_current + diff
-                                    if new_dist_amount > 9999:
-                                        new_dist_amount = 9999
-                                    self.sectors[sec][item] = str(new_dist_amount)
+                                # if new_amount < 0:
+                                #     # print("Not enough", item, "in", dist, "for distribute. ")
+                                # else:
+                                self.sectors[dist][item] = str(new_amount)
+                                self.sectors[dist]["mobil"] = str(nmob)
+                                dist_current = float(self.sectors[sec][item])
+                                new_dist_amount = dist_current + diff
+                                if new_dist_amount > 9999:
+                                    new_dist_amount = 9999
+                                self.sectors[sec][item] = str(new_dist_amount)
 
 class State():
 
