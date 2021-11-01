@@ -53,13 +53,9 @@ def search(s1):
                     print("cens *")
     return
 
-
 def main():
     m = actions.openmodel()
     s1 = actions.State(None, None, m, 0)
-
     search(s1)
-
     return
-
 main()
