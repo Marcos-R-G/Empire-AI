@@ -633,10 +633,25 @@ def STEP_COST(s1, a, s2):
 def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
     # Designate1, Spread1, Network1, Update, and BuildFishingBoat
     m = s.mModel
-    actions = []
+    allactions = []
 
     sector_list = []
 
+    #   Designate1 OLD
+    # need_designate1 = True
+    # allow_designate1 = True
+    # city1 = 0
+    # city2 = 0
+    # city1_found = False
+    # harbor_found = False
+    # for sector in m.sectors:
+    #    if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+    #        need_designate1 = False
+    # for sector in m.sectors:
+    #    if m.sectors[sector]["des"] == m.mTrackedDesignations["c"] and not city1_found:
+    #        city1 = sector
+    #        city1_found = True
+    #
     #   Designate1
     need_designate1 = True
     allow_designate1 = True
@@ -770,7 +785,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
                              "designate5": [light, "j"], "designate6": [heavy, "k"], "designate7": [farm1, "a"],
                              "designate8": [farm2, "a"], "designate9": [farm3, "a"]})
         if allow_designate1 and need_designate1:
-            actions.append(designate1)  # ADDS TO ACTION LIST
+            allactions.append(designate1)  # ADDS TO ACTION LIST
 
     #   Spread1
     allow_spread1 = False
@@ -810,7 +825,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
         spread1_innards["move^"] = ["food", city2, 25, harbor]
         spread1 = action("Spread1", spread1_innards)
     if allow_spread1 and need_spread1:
-        actions.append(spread1)  # ADDS TO ACTION LIST
+        allactions.append(spread1)  # ADDS TO ACTION LIST
 
     #   Network1
     allow_network1 = False
@@ -872,7 +887,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
                                        "thresholdb": ["iron", mine1, 1], "thresholdz": ["iron", mine2, 1],
                                        "thresholdc": ["lcm", light, 1], "thresholdd": ["hcm", heavy, 1]})
     if allow_network1 and need_network1:
-        actions.append(network1)  # ADDS TO ACTION LIST
+        action.append(network1)  # ADDS TO ACTION LIST
 
     #   BuildFishingBoat
     allow_buildfishingboat = False
@@ -892,14 +907,14 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
     if allow_buildfishingboat:
         weight = 100
         for i in range(weight):
-            actions.append(buildfishingboat)  # ADDS TO ACTION LIST
+            allactions.append(buildfishingboat)  # ADDS TO ACTION LIST
 
     #   Update
     update = action("Update", {"update": []})
-    if len(actions) < 1:
-        actions.append(update)  # ADD TO ACTION LIST
+    if len(allactions) < 1:
+        allactions.append(update)  # ADD TO ACTION LIST
 
-    return actions
+    return allactions
 
 def GOAL(s):
     sectors = False
