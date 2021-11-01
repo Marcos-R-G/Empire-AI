@@ -27,6 +27,7 @@ def search(s1):
         sz.append(s2)
 
         if a.mGroup == "Designate1":
+            print("dickkk")
             DESIGNATE_USED = True
             for command in a.mCommands:
                 print("des", actions.change_tuple_to_string(a.mCommands[command][0]), a.mCommands[command][1])

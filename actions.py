@@ -62,8 +62,6 @@ class Model:
 
 
 
-    #
-
 
 
     def getSectors(self):
