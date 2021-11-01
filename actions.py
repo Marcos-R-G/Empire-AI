@@ -34,7 +34,7 @@ class Model:
         # self.NumShips = len(self.ship_sectors)
 
         self.mStarvation = False
-        self.mBuiltShip = False
+        self.mHasShip = False
 
         self.capital = ""
         for key in sectors:
@@ -486,7 +486,7 @@ class Model:
                                     new_dist_amount = 9999
                                 self.sectors[sec][item] = str(new_dist_amount)
 
-class State():
+class State:
 
     def __init__(self,parent, action, Model, path_cost):
         self.mParentState = parent
@@ -606,25 +606,10 @@ def STEP_COST(s1, a, s2):
 def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
     # Designate1, Spread1, Network1, Update, and BuildFishingBoat
     m = s.mModel
-    allactions = []
+    actions = []
 
     sector_list = []
 
-    #   Designate1 OLD
-    # need_designate1 = True
-    # allow_designate1 = True
-    # city1 = 0
-    # city2 = 0
-    # city1_found = False
-    # harbor_found = False
-    # for sector in m.sectors:
-    #    if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
-    #        need_designate1 = False
-    # for sector in m.sectors:
-    #    if m.sectors[sector]["des"] == m.mTrackedDesignations["c"] and not city1_found:
-    #        city1 = sector
-    #        city1_found = True
-    #
     #   Designate1
     need_designate1 = True
     allow_designate1 = True
@@ -753,11 +738,12 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
         light = sector_list[0]
         heavy = sector_list[1]
 
-        designate1 = action("Designate1", {"designate2": [harbor, "h"], "designate3": [mine1, "m"], "designate4": [mine2, "m"],
+        designate1 = Action("Designate1",
+                            {"designate2": [harbor, "h"], "designate3": [mine1, "m"], "designate4": [mine2, "m"],
                              "designate5": [light, "j"], "designate6": [heavy, "k"], "designate7": [farm1, "a"],
                              "designate8": [farm2, "a"], "designate9": [farm3, "a"]})
         if allow_designate1 and need_designate1:
-            allactions.append(designate1)  # ADDS TO ACTION LIST
+            actions.append(designate1)  # ADDS TO ACTION LIST
 
     #   Spread1
     allow_spread1 = False
@@ -772,8 +758,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
             need_spread1 = True
             need_list.append(sector)
     if harbor_exists:
-        if float(m.sectors[city1]["food"]) > 200 and float(m.sectors[city1]["civil"]) > 300 and float(
-                m.sectors[city2]["food"]) > 200 and float(m.sectors[city2]["civil"]) > 300:
+        if float(m.sectors[city1]["food"]) > 200 and float(m.sectors[city1]["civil"]) > 300:
             allow_spread1 = True
 
     indices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
@@ -797,7 +782,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
         spread1_innards["move^"] = ["food", city2, 25, harbor]
         spread1 = action("Spread1", spread1_innards)
     if allow_spread1 and need_spread1:
-        allactions.append(spread1)  # ADDS TO ACTION LIST
+        actions.append(spread1)  # ADDS TO ACTION LIST
 
     #   Network1
     allow_network1 = False
@@ -859,7 +844,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
                                        "thresholdb": ["iron", mine1, 1], "thresholdz": ["iron", mine2, 1],
                                        "thresholdc": ["lcm", light, 1], "thresholdd": ["hcm", heavy, 1]})
     if allow_network1 and need_network1:
-        action.append(network1)  # ADDS TO ACTION LIST
+        actions.append(network1)  # ADDS TO ACTION LIST
 
     #   BuildFishingBoat
     allow_buildfishingboat = False
@@ -879,24 +864,27 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
     if allow_buildfishingboat:
         weight = 100
         for i in range(weight):
-            allactions.append(buildfishingboat)  # ADDS TO ACTION LIST
+            actions.append(buildfishingboat)  # ADDS TO ACTION LIST
 
     #   Update
     update = action("Update", {"update": []})
-    if len(allactions) < 1:
-        allactions.append(update)  # ADD TO ACTION LIST
+    if len(actions) < 1:
+        actions.append(update)  # ADD TO ACTION LIST
 
-    return allactions
+    return actions
+
 
 def GOAL(s):
-    sectors = False
-    starvation = True
-    built_ship = False
-    # print(s)
+    sectors = False  # needs 10 sectors to pass
+    starvation = True  # false is passing, needs to not have starvation
+    built_ship = False  # needs to build a ship to pass
+
     if len(s.mModel.sectors) >= 10:
         sectors = True
     starvation = s.mModel.mStarvation
-    built_ship = s.mModel.mBuiltShip
+    built_ship = s.mModel.mHasShip
+
+    starvation = False
 
     if sectors and built_ship and not starvation:
         return True
