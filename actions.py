@@ -738,7 +738,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
         light = sector_list[0]
         heavy = sector_list[1]
 
-        designate1 = Action("Designate1",
+        designate1 = action("Designate1",
                             {"designate2": [harbor, "h"], "designate3": [mine1, "m"], "designate4": [mine2, "m"],
                              "designate5": [light, "j"], "designate6": [heavy, "k"], "designate7": [farm1, "a"],
                              "designate8": [farm2, "a"], "designate9": [farm3, "a"]})
