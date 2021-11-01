@@ -37,12 +37,12 @@ def search(initial_state, limit):
     #
     # return
 
-    sz = []
-    sz.append(initial_state)
+    Q = []
+    Q.append(initial_state)
 
-    while len(sz) > 0:
+    while len(Q) > 0:
         initial_state.depth += 1
-        s = sz.pop()
+        s = Q.pop()
         # az = actions.ACTION(s)
 
         if actions.GOAL(s):

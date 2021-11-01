@@ -27,7 +27,7 @@ class Model:
         self.sectors = s
         self.ship_sectors = b
 
-        # self.NumSectors = len(self.sectors)
+        # self.Nusectors = len(self.sectors)
         # self.NumShips = len(self.ship_sectors)
 
         self.mStarvation = False
@@ -436,7 +436,7 @@ class Model:
                         self.sectors[sec]["iron"] = "0"
                     print(float(self.sectors[sec]["iron"]))
                     materials = math.floor(float(self.sectors[sec]["iron"]) / 2)
-                    # materials = float(self.mSectors[sec]["iron"]) / 2
+                    # materials = float(self.sectors[sec]["iron"]) / 2
                     consumed = 0
                     if possible_from_workers < materials:
                         consumed = possible_from_workers
@@ -505,15 +505,15 @@ class Model:
                 # test for key error
                 # print("Source: ", source)
                 # print("Com: ", com)
-                # print("Sectors.source: ", self.mSectors[source])
+                # print("Sectors.source: ", self.sectors[source])
                 # print("Tracked.com: ", self.mTrackedCommodities[com])
-                # print("All: ", self.mSectors[source][self.mTrackedCommodities[com]])
+                # print("All: ", self.sectors[source][self.mTrackedCommodities[com]])
                 thresh = float(self.sectors[source][self.mTrackedCommodities[com]])
                 if thresh > 0:
                     item = com
                     amount = float(self.sectors[source][com])
                     if amount > thresh:
-                        # dist = "(" + self.mSectors[source]["xdist"] + ", " + self.mSectors[source]["ydist"] + ")"
+                        # dist = "(" + self.sectors[source]["xdist"] + ", " + self.sectors[source]["ydist"] + ")"
                         dist = (int(self.sectors[source]["xdist"]), int(self.sectors[source]["ydist"]))
                         diff = thresh - amount
                         if diff > 0:
@@ -548,7 +548,7 @@ class Model:
                 # print("Sec: ", sec)
                 # print("Com: ", com)
                 # print("Tracked.com: ", self.mTrackedCommodities[com])
-                # print("All: ", self.mSectors[sec][self.mTrackedCommodities[com]])
+                # print("All: ", self.sectors[sec][self.mTrackedCommodities[com]])
                 thresh = float(self.sectors[sec][self.mTrackedCommodities[com]])
                 if thresh > 0:
                     item = com
@@ -558,12 +558,12 @@ class Model:
                         diff = thresh - amount
                         if diff > 0:
                             # key error test
-                            # for key in self.mSectors:
+                            # for key in self.sectors:
                             #    print(key)
                             # print(dist)
                             # print(item)
-                            # print(self.mSectors[dist])
-                            # print(self.mSectors[dist][item])
+                            # print(self.sectors[dist])
+                            # print(self.sectors[dist][item])
                             current = float(self.sectors[dist][item])
                             sx = int(self.sectors[sec]["xloc"])
                             sy = int(self.sectors[sec]["yloc"])
@@ -588,228 +588,8 @@ class Model:
                                     if new_dist_amount > 9999:
                                         new_dist_amount = 9999
                                     self.sectors[sec][item] = str(new_dist_amount)
-    # def update(self):
-    #
-    #
-    #     etus = 60
-    #     fgrate = .12
-    #     fcrate = 1.3
-    #     eatrate = .5
-    #     obrate = 5
-    #     uwbrate = 2.5
-    #     babyeat = 6
-    #
-    #     for key in self.sectors:
-    #         civ = int(self.sectors[key]["civil"])
-    #         mil = int(self.sectors[key]["milit"])
-    #         uw = int(self.sectors[key]["uw"])
-    #         des = int(self.sectors[key]["des"])
-    #         effic = int(self.sectors[key]["effic"])
-    #         miner = int(self.sectors[key]["min"])
-    #         gold = int(self.sectors[key]["gold"])
-    #         work = int(self.sectors[key]["work"])
-    #         sector_fertility = int(self.sectors[key]["fert"])
-    #         food = int(self.sectors[key]["food"])
-    #         iron = int(self.sectors[key]["iron"])
-    #         lcm = int(self.sectors[key]["lcm"])
-    #         hcm = int(float(self.sectors[key]["hcm"]))
-    #         mobil = int(self.sectors[key]["mobil"])
-    #         f_dist = int(self.sectors[key]["f_dist"])
-    #         i_dist = int(self.sectors[key]["i_dist"])
-    #         l_dist = int(self.sectors[key]["l_dist"])
-    #         h_dist = int(self.sectors[key]["h_dist"])
-    #         xdist = int(self.sectors[key]["xdist"])
-    #         ydist = int(self.sectors[key]["ydist"])
-    #         xloc = int(self.sectors[key]["xloc"])
-    #         yloc = int(self.sectors[key]["yloc"])
-    #
-    #
-    #
-    #         workforce = (civ * work / 100 + uw * 0.4) / 100
-    #
-    #
-    #         if workforce > 0:
-    #             # increase sector efficiency
-    #             effic += work
-    #             if effic > 100:
-    #                 effic = 100
-    #
-    #             # Foood!!!!!!!
-    #             dd = etus * sector_fertility * fgrate
-    #             dtemp = work * 100 * fcrate
-    #             if dtemp < dd:
-    #                 dd = dtemp
-    #             foodtmp = food + dd
-    #
-    #             # feed everyone!!
-    #
-    #             dd = etus * (civ + mil) * eatrate
-    #             if dd > foodtmp:
-    #                 # starvation
-    #                 # figure out what percentage can be fed and kill the rest up to 1/2 of population
-    #
-    #                 foodneed = (civ * 0.0005) * etus
-    #                 shortage = foodtmp - foodneed
-    #                 deaths = shortage * etus
-    #                 if deaths > (civ / 2):
-    #                     deaths = (civ / 2)
-    #                 civ -= deaths
-    #                 food = 0
-    #             else:
-    #                 food = foodtmp - dd
-    #                 if food > 999:
-    #                     food = 999
-    #
-    #             q = etus * civ * obrate
-    #             if q > food / (2 * babyeat):
-    #                 q = food / (2 * babyeat)
-    #             if q > 999 - civ:
-    #                 q = 999 - civ
-    #             food = food - q * babyeat
-    #             civ = civ + q
-    #
-    #             mobil += etus
-    #             if mobil > 127:
-    #                 mobil = 127
-    #
-    #             # mcost = path_cost / pack * lbs / DIST_BONUS;
-    #             # delivery and distribution =-------------------------------------------------------------
-    #
-    #             path_cost = (abs(float(ydist) - float(yloc)) + abs(float(xdist) - float(xloc))) / 2.0
-    #             DIST_BONUS = 10
-    #             diskey = (xdist, ydist)
-    #             if f_dist != 0:
-    #                 lbs = 10
-    #                 pack = 10
-    #                 mcost = (path_cost*.4) / pack * lbs / DIST_BONUS;
-    #                 dif = abs(food - f_dist)
-    #                 if mcost * dif > mobil:
-    #                     dif = mobil
-    #                     mobil = 0
-    #                 else:
-    #                     mobil = mobil - (mcost * dif)
-    #
-    #                 if int(float(self.sectors[diskey]["food"])) + dif > 999:
-    #                     dif = 999 - int(float(self.sectors[diskey]["food"]))
-    #                 x = int(float(self.sectors[diskey]["food"]))
-    #                 x += dif
-    #                 self.sectors[diskey]["food"] = str(x)
-    #                 food -= dif
-    #             if i_dist != 0:
-    #                 lbs = 10
-    #                 pack = 10
-    #                 mcost = (path_cost * .4) / pack * lbs / DIST_BONUS;
-    #                 dif = abs(iron - i_dist)
-    #                 if mcost * dif > mobil:
-    #                     dif = mobil
-    #                     mobil = 0
-    #                 else:
-    #                     mobil = mobil - (mcost * dif)
-    #                 if int(self.sectors[diskey]["iron"]) + dif > 9999:
-    #                     dif = 9999 - int(self.sectors[diskey]["iron"])
-    #                 x = int(self.sectors[diskey]["iron"])
-    #                 x += dif
-    #                 self.sectors[diskey]["iron"] = str(x)  # re-assign the iron to x += dif
-    #                 iron -= dif
-    #             if l_dist != 0:
-    #                 lbs = 10
-    #                 pack = 10
-    #                 mcost = (path_cost * .4) / pack * lbs / DIST_BONUS;
-    #                 dif = abs(lcm - l_dist)
-    #                 if mcost * dif > mobil:
-    #                     dif = mobil
-    #                     mobil = 0
-    #                 else:
-    #                     mobil = mobil - (mcost * dif)
-    #                 if int(float(self.sectors[diskey]["lcm"])) + dif > 9999:
-    #                     dif = 9999 - int(float(self.sectors[diskey]["lcm"]))
-    #                 x = int(float(self.sectors[diskey]["lcm"]))
-    #
-    #                 x += dif
-    #                 self.sectors[diskey]["lcm"] = str(x)  # re-assign self.sectors[diskey]["lcm"] to += dif
-    #
-    #                 lcm -= dif
-    #             if h_dist != 0:
-    #                 lbs = 10
-    #                 pack = 10
-    #                 mcost = (path_cost * .4) / pack * lbs / DIST_BONUS;
-    #                 dif = abs(hcm - h_dist)
-    #                 if mcost * dif > mobil:
-    #                     dif = mobil
-    #                     mobil = 0
-    #                 else:
-    #                     mobil = mobil - (mcost * dif)
-    #                 if int(self.sectors[diskey]["hcm"]) + dif > 9999:
-    #                     dif = 9999 - int(self.sectors[diskey]["hcm"])
-    #                 x = int(self.sectors[diskey]["hcm"])
-    #                 x += dif
-    #
-    #                 self.sectors[diskey]["hcm"] = str(x)
-    #                 hcm -= dif
-    #             # production
-    #             # "m":"10","a":"15","k":"18","j":"17"
-    #             if effic >= 60:
-    #                 if des == 10:
-    #                     # mine
-    #                     iron += (workforce * miner) * etus
-    #                 elif des == 17:
-    #                     # lcm factory costs 1 iron
-    #                     lcm += etus * workforce
-    #                 elif des == 18:
-    #                     # hcm factory costs 2 iron
-    #                     hcm += (etus * workforce) / 2
-    #
-    #
-    #             self.sectors[key]["civil"] = str(int(civ))
-    #             self.sectors[key]["milit"] = str(int(mil))
-    #             self.sectors[key]["uw"] = str(int(uw))
-    #             self.sectors[key]["des"] = self.sectors[key]["newdes"]
-    #             self.sectors[key]["effic"] = str(int(effic))
-    #             self.sectors[key]["gold"] = str(int(gold))
-    #             self.sectors[key]["work"] = str(int(work))
-    #             self.sectors[key]["food"] = str(int(food))
-    #             self.sectors[key]["iron"] = str(int(iron))
-    #             self.sectors[key]["lcm"] = str(int(lcm))
-    #             self.sectors[key]["hcm"] = str(int(hcm))
-    #             self.sectors[key]["mobil"] = str(int(mobil))
-    #
-    #     for key in self.ship_sectors:
-    #         mobil = int(self.ship_sectors[key]["mobil"])
-    #         effic = int(self.ship_sectors[key]["effic"])
-    #         civ = int(self.ship_sectors[key]["civil"])
-    #         sector = (int(self.ship_sectors[key]["xloc"]), int(self.ship_sectors[key]["yloc"]))
-    #         sector_fertility = int(sectors[sector]["fert"])
-    #         food = int(self.ship_sectors[key]["food"])
-    #
-    #         mobil += etus
-    #         if mobil > 127:
-    #             mobil = 127
-    #         effic += etus
-    #         if effic > 100:
-    #             effic = 100
-    #         food += etus * civ * sector_fertility / 10000
-    #         food -= etus * civ * eatrate
-    #         self.ship_sectors[key]["mobil"] = str(int(mobil))
-    #         self.ship_sectors[key]["effic"] = str(int(effic))
-    #         self.ship_sectors[key]["civil"] = str(int(civ))
-    #         self.ship_sectors[key]["food"] = str(int(food))
-    #
-    #
 
-# class State:
-#     s = []
-#
-# class Action:
-#     ACTIONS = [move(),designate(),]
-
-# print(sectors[0,2])
-# mob cost = (amount) * (weight) * (path cost) / (source packing bonus)
 class State():
-    # - Create a State
-    #
-    # class .Must have an instance of the Model as a data member.
-    # Also needs a reference to its parent state, the Action used to reach this State,
-    # and the total path cost to reach this State.
 
     def __init__(self,parent, action, Model, path_cost):
         self.mParentState = parent
@@ -883,21 +663,6 @@ def change_tuple_to_string(tup):
         new_string = tupstring[xco] + tupstring[com] + tupstring[yco]
     return new_string
 
-    # def goal(self, state):
-    #
-    #     max_pop = True
-    #     for key in self.sectors:
-    #         if self.sectors[key]["civil"] != 1000:
-    #             max_pop = False
-    #             break
-    #     if state.fishing >= 1 and max_pop:
-    #         return True
-    #     return False
-
-
-
-
-
 
 
 
@@ -916,35 +681,20 @@ class action():
             DESIGNATE_USED = True
             for command in self.mCommands:
                 getattr(model, command[:-1])(*self.mCommands[command])
-                print("des", change_tuple_to_string(self.mCommands[command][0]), self.mCommands[command][1])
         elif self.mGroup == "Network1":
             NETWORK_USED = True
             for command in self.mCommands:
                 if command == "distribute":
                     getattr(model, command)(*self.mCommands[command])
-                    print("distribute", "*", change_tuple_to_string(self.mCommands[command][0]))
                 else:
                     getattr(model, command[:-1])(*self.mCommands[command])
-                    print("threshold", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]),
-                          self.mCommands[command][2])
         elif self.mGroup == "Spread1":
             SPREAD_USED = True
             for command in self.mCommands:
                 getattr(model, command[:-1])(*self.mCommands[command])
-                print("move", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]),
-                      self.mCommands[command][2], change_tuple_to_string(self.mCommands[command][3]))
         else:
             for command in self.mCommands:
-                # print(command)
-                # print(*self.mCommands[command])
                 getattr(model, command)(*self.mCommands[command])
-                if command == "build_ship":
-                    print("build ship", change_tuple_to_string(self.mCommands[command][0]),
-                          str(self.mCommands[command][1]))
-
-                else:
-                    # command == "update":
-                    print("update")
 
         return model
 
@@ -954,7 +704,6 @@ class action():
 
     def getCommands(self):
         return self.mCommands
-        # returns a list of actions
 
     def STEP_COST(self, s1, a, s2):
         sc = 0
@@ -967,190 +716,283 @@ class action():
         sc += commands * 0.01
         return sc
 
-    # def create_actions(self, state):
-    #     arriving = state.aaction
-    #     if (state.aaction == "update" or state.aaction == "start"):
-    #         return self.designate(state), "designate"
-    #     elif (state.aaction == "designate"):
-    #         return self.populate(state), "populate"
-    #     elif (state.aaction == "populate"):
-    #         return self.distribute(state), "distribute"
-    #     elif (state.aaction == "distribute"):
-    #         return self.build_ship(state), "build"
-    #     elif (state.aaction == "build"):
-    #         return self.update(state), "update"
-    #     else:
-    #         print("invalid state action")
 
-
-def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
+def ACTION(s):
     m = s.mModel
     actions = []
-    # update, no parameters, no logic
-    update = action("Update", {"update": []})
-    actions.append(update)
 
-    # designate strategy 1, mine, light, heavy, harbor, capital, 5 agri
-    highestMin = 0
-    lowestFert = 10000
-    noLowest = True
-    seclist = []
-    noharbor = True
+    sector_list = []
+
+
+
+    need_designate1 = True
+    allow_designate1 = True
+    city1 = 0
+    city2 = 0
+    harbor = 0
+    farm1 = 0
+    farm2 = 0
+    farm3 = 0
+    mine1 = 0
+    mine2 = 0
+    light = 0
+    heavy = 0
+    city1_found = False
+    harbor_found = False
+    onefarm = False
+    twofarm = False
+    onemine = False
     for sector in m.sectors:
-        if m.sectors[sector]["des"] == m.mTrackedDesignations["c"]:
-            des1capital = sector
-        elif m.sectors[sector]["coastal"] == "1" and noharbor:
-            des1harbor = sector
-            noharbor = False
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+            need_designate1 = False
+            harbor = sector
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["a"]:
+            if twofarm:
+                farm3 = sector
+            elif onefarm:
+                farm2 = sector
+                twofarm = True
+            else:
+                need_designate1 = False
+                farm1 = sector
+                onefarm = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["m"]:
+            if onemine:
+                mine2 = sector
+            else:
+                need_designate1 = False
+                mine1 = sector
+                onemine = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["j"]:
+            need_designate1 = False
+            light = sector
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["k"]:
+            need_designate1 = False
+            heavy = sector
+
+    for sector in m.sectors:
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["c"] and not city1_found:
+            city1 = sector
+            city1_found = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["c"] and city1_found:
+            city2 = sector
         else:
-            seclist.append(sector)
-    # ----------------------------------------------------------------------------------------------------------------------------------
+            sector_list.append(sector)
 
-    des1mine = seclist[6]
-    des1lightfactory = seclist[3]
-    des1heavyfactory = seclist[5]
-    des1agri1 = seclist[0]
-    des1agri2 = seclist[1]
-    des1agri3 = seclist[2]
-    des1agri5 = seclist[4]
+    if need_designate1 and allow_designate1:
+        coastal_list = []
+        for sector in sector_list:
+            if m.sectors[sector]["coastal"] == "1":
+                coastal_list.append(sector)
 
+        resources = 2000000000.0
 
-    designate1 = action("Designate1", {"designate1": [des1capital, "c"], "designate2": [des1harbor, "h"],
-                                       "designate3": [des1mine, "m"], "designate4": [des1lightfactory, "j"],
-                                       "designate5": [des1heavyfactory, "k"], "designate6": [des1agri1, "a"],
-                                       "designate7": [des1agri2, "a"], "designate8": [des1agri3, "a"],
-                                        "designate0": [des1agri5, "a"], })
-    actions.append(designate1)
+        for sector in coastal_list:
+            if float(m.sectors[sector]["min"]) + float(m.sectors[sector]["fert"]) < resources:
+                harbor = sector
+                resources = float(m.sectors[sector]["min"]) + float(m.sectors[sector]["fert"])
+                harbor_found = True
 
-    found1 = False
-    found2 = False
-    found = False
+        for i in range(len(sector_list)):
+            if sector_list[i] == harbor:
+                index = i
+
+        sector_list.pop(index)
+
+        fert = 0
+
+        for i in range(len(sector_list)):
+            if float(m.sectors[sector_list[i]]["fert"]) > fert:
+                fert = float(m.sectors[sector_list[i]]["fert"])
+                farm1 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        min = 0
+
+        for i in range(len(sector_list)):
+            if float(m.sectors[sector_list[i]]["min"]) > min:
+                fert = float(m.sectors[sector_list[i]]["min"])
+                mine1 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        fert = 0
+
+        for i in range(len(sector_list)):
+            if float(m.sectors[sector_list[i]]["fert"]) > fert:
+                fert = float(m.sectors[sector_list[i]]["fert"])
+                farm2 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        min = 0
+
+        for i in range(len(sector_list)):
+            if float(m.sectors[sector_list[i]]["min"]) > min:
+                fert = float(m.sectors[sector_list[i]]["min"])
+                mine2 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        fert = 0
+
+        for i in range(len(sector_list)):
+            if float(m.sectors[sector_list[i]]["fert"]) > fert:
+                fert = float(m.sectors[sector_list[i]]["fert"])
+                farm3 = sector_list[i]
+                index = i
+
+        sector_list.pop(index)
+
+        light = sector_list[0]
+        heavy = sector_list[1]
+
+        designate1 = action("Designate1",
+                            {"designate2": [harbor, "h"], "designate3": [mine1, "m"], "designate4": [mine2, "m"],
+                             "designate5": [light, "j"], "designate6": [heavy, "k"], "designate7": [farm1, "a"],
+                             "designate8": [farm2, "a"], "designate9": [farm3, "a"]})
+        if allow_designate1 and need_designate1:
+            actions.append(designate1)  # ADDS TO ACTION LIST
+
+    #   Spread1
+    allow_spread1 = False
+    harbor_exists = False
+    need_spread1 = False
+    need_list = []
+    for sector in m.sectors:
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+            harbor_exists = True
+            harbor = sector
+        if float(m.sectors[sector]["civil"]) < 50.0:
+            need_spread1 = True
+            need_list.append(sector)
+    if harbor_exists:
+        if float(m.sectors[city1]["food"]) > 200 and float(m.sectors[city1]["civil"]) > 300 and float(
+                m.sectors[city2]["food"]) > 200 and float(m.sectors[city2]["civil"]) > 300:
+            allow_spread1 = True
+
+    indices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"]
+
+    if allow_spread1:
+        spread1_innards = {}
+        for i in range(len(need_list)):
+            if i < 4:
+                key = "move" + str(i)
+                spread1_innards[key] = ["food", city1, 20, need_list[i]]
+                key = "move" + indices[i]
+                spread1_innards[key] = ["civil", city1, 50, need_list[i]]
+            else:
+                key = "move" + str(i)
+                spread1_innards[key] = ["food", city2, 20, need_list[i]]
+                key = "move" + indices[i]
+                spread1_innards[key] = ["civil", city2, 50, need_list[i]]
+        spread1_innards["move!"] = ["civil", city1, 50, harbor]
+        spread1_innards["move@"] = ["civil", city2, 50, harbor]
+        spread1_innards["move#"] = ["food", city1, 25, harbor]
+        spread1_innards["move^"] = ["food", city2, 25, harbor]
+        spread1 = action("Spread1", spread1_innards)
+    if allow_spread1 and need_spread1:
+        actions.append(spread1)  # ADDS TO ACTION LIST
+
+    #   Network1
+    allow_network1 = False
+    harbor_exists = False
+    need_network1 = False
+    city1_found = False
+    sector_list = []
     for sector in m.sectors:
         if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
             harbor = sector
-            found1 = True
-            if found1 and found2:
-                found = True
-        if m.sectors[sector]["des"] == m.mTrackedDesignations["a"]:
-            found2 = True
-            if found1 and found2:
-                found = True
-    if found1 and found2:
-        found = True
-    if found:
-        # spread strat 1, 100 civs to each, 100 food to each
-        seclist = []
-        for sector in m.sectors:
-            if m.sectors[sector]["des"] == "5":
-                scapital = sector
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["c"]:
+            if city1_found:
+                city2 = sector
             else:
-                seclist.append(sector)
-        spread1 = action("Spread1",
-                         {"move": ["food", scapital, 100, seclist[0]], "move": ["food", scapital, 100, seclist[1]],
-                          "move": ["food", scapital, 100, seclist[2]], "move": ["food", scapital, 100, seclist[3]],
-                          "move": ["food", scapital, 100, seclist[4]], "move": ["food", scapital, 100, seclist[5]],
-                          "move": ["food", scapital, 100, seclist[6]], "move": ["food", scapital, 100, seclist[7]],
-                          "move": ["civil", scapital, 100, seclist[0]],
-                          "move": ["civil", scapital, 100, seclist[1]], "move": ["civil", scapital, 100, seclist[2]],
-                          "move": ["civil", scapital, 100, seclist[3]], "move": ["civil", scapital, 100, seclist[4]],
-                          "move": ["civil", scapital, 100, seclist[5]], "move": ["civil", scapital, 100, seclist[6]],
-                          "move": ["civil", scapital, 100, seclist[7]]})
-        # actions.append(spread1)
-        # spread strat 2, 25 civs to each, 50 food to each, city keeps rest
-        spread2 = action("Spread2", {})  # future implementation
-
-        # network strat 1 for designate strat 1, set threshold 1 for producers, food thresholds for all to 500, distribute to harbor
-        network1 = action("Network1", {"distribute": [des1harbor], "threshold1": ["food", des1agri1, 500],
-                                       "threshold2": ["food", des1agri2, 500], "threshold3": ["food", des1agri3, 500],
-                                       "threshold5": ["food", des1agri5, 500],
-                                       "threshold6": ["food", des1mine, 500], "threshold7": ["food", des1capital, 500],
-                                       "threshold8": ["food", des1lightfactory, 500],
-                                       "threshold9": ["food", des1heavyfactory, 500],
-                                       "threshold0": ["iron", des1heavyfactory, 500],
-                                       "thresholda": ["iron", des1lightfactory, 500],
-                                       "thresholdb": ["iron", des1mine, 1], "thresholdc": ["lcm", des1lightfactory, 1],
-                                       "thresholdd": ["hcm", des1heavyfactory, 1]})
-        actions.append(network1)
-        # network strat 2 for designate strat 2
-        network2 = action("Network2", {})  # future implementation
-        # builds fishing boat in harbor
+                city1 = sector
+                city1_found = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["a"]:
+            if twofarm:
+                farm3 = sector
+            elif onefarm:
+                farm2 = sector
+                twofarm = True
+            else:
+                farm1 = sector
+                onefarm = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["m"]:
+            if onemine:
+                mine2 = sector
+            else:
+                mine1 = sector
+                onemine = True
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["j"]:
+            light = sector
+        elif m.sectors[sector]["des"] == m.mTrackedDesignations["k"]:
+            heavy = sector
+    for sector in m.sectors:
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+            harbor_exists = True
+            check_harb = sector
+            harbor = sector
+            sector_list.append(sector)
+        else:
+            sector_list.append(sector)
+    if harbor_exists:
         for sector in m.sectors:
-            if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
-                harbor = sector
-                found = True
-        if found:
-            buildfishingboat = action("BuildFishingBoat", {"build_ship": [harbor, "fb"]})
-            if int(float(m.sectors[harbor]["hcm"])) >= m.mShipTypes["fb"]["hcm"] and int(
-                    float(m.sectors[harbor]["lcm"])) >= m.mShipTypes["fb"]["lcm"]:
-                actions.append(buildfishingboat)
-            # builds a frigate in the harbor
+            if m.sectors[sector]["des"] != m.mTrackedDesignations["h"]:
+                if m.sectors[sector]["xdist"] != m.sectors[check_harb]["xloc"] or m.sectors[sector]["ydist"] != \
+                        m.sectors[check_harb]["yloc"]:
+                    need_network1 = True
+
+    if harbor_exists:
+        allow_network1 = True
+        network1 = action("Network1", {"distribute": [harbor], "threshold1": ["food", farm1, 200],
+                                       "threshold2": ["food", farm2, 200], "threshold3": ["food", farm3, 200],
+                                       "threshold4": ["food", mine1, 200], "threshold5": ["food", mine2, 200],
+                                       "threshold6": ["food", light, 200], "threshold7": ["food", heavy, 200],
+                                       "threshold8": ["food", city1, 200], "threshold9": ["food", city2, 200],
+                                       "threshold0": ["iron", light, 100], "thresholda": ["iron", heavy, 200],
+                                       "thresholdb": ["iron", mine1, 1], "thresholdz": ["iron", mine2, 1],
+                                       "thresholdc": ["lcm", light, 1], "thresholdd": ["hcm", heavy, 1]})
+    if allow_network1 and need_network1:
+        actions.append(network1)  # ADDS TO ACTION LIST
+
+    #   BuildFishingBoat
+    allow_buildfishingboat = False
+    harbor_exists = False
+    for sector in m.sectors:
+        if m.sectors[sector]["des"] == m.mTrackedDesignations["h"]:
+            harbor_exists = True
+            build_harb = sector
+
+    if harbor_exists:
+        if float(m.sectors[build_harb]["lcm"]) >= m.mShipTypes["fb"]["lcm"] and float(m.sectors[build_harb]["hcm"]) >= \
+                m.mShipTypes["fb"]["hcm"]:
+            allow_buildfishingboat = True
+
+    if allow_buildfishingboat:
+        buildfishingboat = action("BuildFishingBoat", {"build_ship": [harbor, "fb"]})
+    if allow_buildfishingboat:
+        weight = 100
+        for i in range(weight):
+            actions.append(buildfishingboat)
+
+    #   Update
+    update = action("Update", {"update": []})
+    if len(actions) < 1:
+        actions.append(update)  # ADD TO ACTION LIST
+
     return actions
 
-def RESULT(s1, a):
 
-    playmodel = copy.deepcopy(s1.mModel)
-    newmodel = a.apply(playmodel)
-    s2 = State(s1, a, newmodel, s1.mPathCost + 1)
-    s2.depth += 1
-    return s2
-
-
-# def result(state_1, actions_list, arriving_action):
-#     model_copy = copy.deepcopy(state_1.model)
-#     primitives = []
-#     if len(actions_list) > 0:
-#         for action in actions_list:
-#             if arriving_action != "update":
-#                 p = action.run(model_copy)
-#                 if p != None:
-#                     primitives.append(p)
-#             else:
-#                 p = action.run(model_copy)
-#                 primitives.append("UPDATE")
-#     else:
-#         primitives = []
-#
-#     state_2 = State(model_copy, state_1, primitives, arriving_action,
-#                     self.step_cost(arriving_action, len(actions_list)))
-#     return state_2
-
-# def search(initial_state):
-#   Q = []
-#   Q.append(initial_state)
-#   while len(Q) != 0:
-#     s = Q.pop()
-#     m = State()
-#     if m.goal(s):
-#       return s
-#     for a in ACTION(s):
-#       Q.insert(0, RESULT(a))
-#   return
-
-
-# def find_goal_state():
-#     initial_model = Model(sectors, ship_sectors)
-#     initial_state = State()
-#     g = search(initial_state)
-#     instructions = []
-#
-#     print("COMMANDS:")
-#     print()
-#     print()
-#     while g.parent_state != None:
-#         for a in g.primitives[::-1]:
-#             instructions.insert(0, a)
-#             # print(a)
-#         g = g.parent_state
-#
-#     for instr in instructions:
-#         if instr == "UPDATE":
-#             break
-#         else:
-#             print(instr)
-def GOAL(s): # -> True/False |evaluate model in State s and determine if goal has been reached
-    sectors = False # needs 10 sectors to pass
-    starvation = True # false is passing, needs to not have starvation
-    built_ship = False # needs to build a ship to pass
+def GOAL(s):
+    sectors = False
+    starvation = True
+    built_ship = False
     # print(s)
     if len(s.mModel.sectors) >= 10:
         sectors = True
