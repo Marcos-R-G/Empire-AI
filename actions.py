@@ -53,13 +53,13 @@ class Model:
         self.mTrackedWeights = {'food': 1, "iron": 1, "lcm": 1, "hcm": 1, "civil": 1}
         self.mTrackedDesignations = {"c": "5", "h": "12", "m": "10", "a": "15", "k": "18", "j": "17"}
         self.mShipTypes = {"frg": {"lcm": "30", "hcm": "30", "type": "6"}, "fb": {"lcm": 25, "hcm": 15, "type": "0"}}
+
+
+
     #
-    # def RESULT(s1, a):  # -> s2 |returns new state with copy of model after applying commands of Action a
-    #     # consider using copy.deepcopy
-    #     playmodel = copy.deepcopy(s1.mModel)
-    #     newmodel = a.apply(playmodel)
-    #     s2 = State(s1, a, newmodel, s1.mPathCost)  # correct path cost will be calculated in class init
-    #     return s2
+
+
+
     def getSectors(self):
         return self.sectors
     def move(self, comm,fromsect, numtoMove, tosect):
@@ -110,43 +110,6 @@ class Model:
 
 
 
-        # pathCost = |y2-y1| + (|x2-x1|)/2
-        # x1 = int(self.sectors[fromsect]["xloc"])
-        # x2 = int(self.sectors[tosect]["xloc"])
-        # y1 = int(self.sectors[fromsect]["yloc"])
-        # y2 = int(self.sectors[tosect]["yloc"])
-        #
-        # pathCost = abs(y2 - y1) \
-        #            + (abs(x2 - x1)) / 2
-        #
-        # mobCost = numtoMove * comms[comm] * (pathCost * .4) / sourceBonus
-        # mobility = int(self.sectors[fromsect]["mobil"])
-        # mobility2 = mobility
-        # mobility -= mobCost
-
-
-        # if mobility < 0:
-        #     mobility = 0
-        #     fromCivs = int(int(self.sectors[fromsect]["civil"]) /mobility2)
-        #     fromsend = str(int(self.sectors[fromsect]["civil"]) - fromCivs)
-        #     self.sectors[fromsect]["civil"] = fromsend
-        #
-        #     fromsend = str(int(self.sectors[tosect]["civil"]) + fromCivs)
-        #     self.sectors[tosect]["civil"] = fromsend
-        #
-        # else:
-        #     fromCivs = int(int(self.sectors[fromsect]["civil"]) / mobility)
-        #
-        #     fromsend = str(int(self.sectors[fromsect]["civil"]) - fromCivs)
-        #     self.sectors[fromsect]["civil"] = fromsend
-        #
-        #     fromsend = str(int(self.sectors[tosect]["civil"]) + fromCivs)
-        #     self.sectors[tosect]["civil"] = fromsend
-        #
-        # self.sectors[fromsect]["mobil"] = str(mobility)
-
-
-
 
     def getEffic(self, sector):
         x = self.sectors[sector]["effic"]
@@ -172,32 +135,6 @@ class Model:
             self.sectors[sect]["effic"] = "0"
         return True
 
-        # eff = self.getEffic(sector)
-        # types = {'h': "12", "m": "10", "c": "5", "j": "17","k": "18", "a": "15"}
-        # if type in types:
-        #     if self.sectors[sector]["des"] != type:
-        #         # if type == "h" and self.sectors[sector]["coastal"] == "1":
-        #         if type != "h":
-        #             if eff < 5:
-        #                 self.sectors[sector]["des"] = types[type]
-        #             self.sectors[sector]["newdes"] = types[type]
-        #             return
-        #         if eff < 5:
-        #             if self.sectors[sector]["coastal"] == "1":
-        #                 self.sectors[sector]["des"] = types["h"]
-        #             print("sector is not coastal")
-        #             return
-        #         if self.sectors[sector]["coastal"] == "1":
-        #             self.sectors[sector]["newdes"] = types["h"]
-        #             return
-        #         print("sector is not coastal")
-        #         return
-        #
-        # print("type is incorrect")
-        # return
-
-    # fb   fishing boat          25  15    75    0 $180
-    # frg  frigate               30  30   110    0 $600
 
     def threshold(self, comm,sect, thresh):
         if comm not in self.mTrackedCommodities:
@@ -213,8 +150,6 @@ class Model:
         self.sectors[sect][self.mTrackedCommodities[comm]] = thresh
 
         return True
-
-
 
 
     def distribute(self, sect):
@@ -273,42 +208,6 @@ class Model:
         self.mBuiltShip = True
         return True
 
-        # shipTypes = {"frg":{"lcm":"30","hcm":"30", "type":"6"},"fb":{"lcm":25,"hcm":15, "type": "0"}}
-        # newUID = 68
-        #
-        # if sect not in self.sectors:
-        #     print(sect, "Is not Currently Owned")
-        #     return
-        # if self.sectors[sect]["des"] != "12":
-        #     print("ships must be built in a harbor. ")
-        #     return
-        # if ship not in shipTypes:
-        #     print(ship, "is not an a correct ship type ")
-        #     return
-        #
-        # if int(self.sectors[sect]["lcm"]) < int(shipTypes[ship]["lcm"]):
-        #     print("not enough lcm to build ship. ")
-        #     return
-        # if int(self.sectors[sect]["hcm"]) < int(shipTypes[ship]["hcm"]):
-        #     print("not enough hcm to build ship. ")
-        #     return
-        #
-        # # if int(self.sectors[sect]['effic']) < 20:   ---------- talk to dawson
-        #
-        # words = str( str(newUID) + " " + self.sectors[sect]["owner"] + " " +  self.sectors[sect]["xloc"] + " " + self.sectors[sect]["yloc"]
-        #             + " " + shipTypes[ship]["type"] + " 20 127 0 9 -10 0 0 0 \"\" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 \"\" 0 \"\"")
-        #
-        # new_ship = self.shipDict(words)
-        # self.ship_sectors[newUID] = new_ship
-        # newUID += 1
-        # self.fishing +=1
-        #
-        #
-        # new_lcm = int(self.sectors[sect]["lcm"]) - int(shipTypes[ship]["lcm"])
-        # new_hcm = int(self.sectors[sect]["hcm"]) - int(shipTypes[ship]["hcm"])
-        #
-        # self.sectors[sect]["lcm"] = str(new_lcm)
-        # self.sectors[sect]["hcm"] = str(new_hcm)
 
     def capital(self, sect):
         if sect not in self.sectors:
@@ -1008,7 +907,7 @@ def GOAL(s):
 def openmodel():
     sectors = pickle.load(open("sectors.p", "rb"))
 
-    ships = pickle.load(open("ship_sectors.p.p", "rb"))
+    ships = pickle.load(open("ship_sectors.p", "rb"))
 
     m = Model(sectors, ships)
 
@@ -1017,11 +916,17 @@ def openmodel():
     foutsector.close()
     # print("Sectors closed. ")
 
-    foutship = open("ship_sectors.p.p", "wb")
+    foutship = open("ship_sectors.p", "wb")
     pickle.dump(m.ship_sectors, foutship)
     foutship.close()
 
     return m
+def RESULT(s1, a):  # -> s2 |returns new state with copy of model after applying commands of Action a
+    # consider using copy.deepcopy
+    playmodel = copy.deepcopy(s1.mModel)
+    newmodel = a.apply(playmodel)
+    s2 = State(s1, a, newmodel, s1.mPathCost)  # correct path cost will be calculated in class init
+    return s2
 
 def main():
     sectors = pickle.load(open("sectors.p", "rb"))
@@ -1040,7 +945,7 @@ def main():
     foutsector.close()
     # print("Sectors closed. ")
 
-    foutship = open("ship_sectors.p.p", "wb")
+    foutship = open("ship_sectors.p", "wb")
     pickle.dump(m.ship_sectors, foutship)
     foutship.close()
     # print("Ships closed. ")

@@ -28,7 +28,7 @@ def search(initial_state, limit):
     while len(sz) > 0:
         initial_state.depth += 1
         s = sz.pop()
-        # az = actions.ACTION(s)
+        az = actions.ACTION(s)
 
         if actions.GOAL(s):
             print("GOAL state reached! ")
@@ -36,32 +36,38 @@ def search(initial_state, limit):
         if initial_state.depth > limit:
             print("Exceeded 100 actions.")
             return s
-        for a in actions.ACTION(s):
-            if a.mGroup == "Designate1":
-                actions.DESIGNATE_USED = True
-                for command in a.mCommands:
-                    print("des", actions.change_tuple_to_string(a.mCommands[command][0]), a.mCommands[command][1])
+        # for a in actions.ACTION(s):
 
-            elif a.mGroup == "Network1":
-                actions.NETWORK_USED = True
-                for command in a.mCommands:
-                    if command == "distribute":
-                        print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
-                    else:
-                        print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
-                              a.mCommands[command][2])
-            elif a.mGroup == "Spread1":
-                actions.SPREAD_USED = True
-                for command in a.mCommands:
-                    print("move", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
-                          a.mCommands[command][2], actions.change_tuple_to_string(a.mCommands[command][3]))
-            else:
-                for command in a.mCommands:
-                    if command == "build_ship":
-                        print("build ship", actions.change_tuple_to_string(a.mCommands[command][0]),
-                              str(a.mCommands[command][1]))
-                    else:
-                        print("update")
+        pick = random.randrange(0, len(az))
+        a = az[pick]
+        s2 = actions.RESULT(s, a)
+        sz.append(s2)
+
+        if a.mGroup == "Designate1":
+            actions.DESIGNATE_USED = True
+            for command in a.mCommands:
+                print("des", actions.change_tuple_to_string(a.mCommands[command][0]), a.mCommands[command][1])
+
+        elif a.mGroup == "Network1":
+            actions.NETWORK_USED = True
+            for command in a.mCommands:
+                if command == "distribute":
+                    print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
+                else:
+                    print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
+                          a.mCommands[command][2])
+        elif a.mGroup == "Spread1":
+            actions.SPREAD_USED = True
+            for command in a.mCommands:
+                print("move", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
+                      a.mCommands[command][2], actions.change_tuple_to_string(a.mCommands[command][3]))
+        else:
+            for command in a.mCommands:
+                if command == "build_ship":
+                    print("build ship", actions.change_tuple_to_string(a.mCommands[command][0]),
+                          str(a.mCommands[command][1]))
+                else:
+                    print("update")
 
     return
 
