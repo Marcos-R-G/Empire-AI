@@ -47,5 +47,5 @@ pickle.dump(sectors, fout)
 fout.close()
 
 # print("as far as you know this is parsed")
-# /usr/citlocal/cs4300/bin/empire -s empire.cs.dixie.edu:2834
+# /usr/citlocal/cs4300/bin/empire -s empire.cs.dixie.edu:2832
 # xdump 1 * | ./parseShip.py

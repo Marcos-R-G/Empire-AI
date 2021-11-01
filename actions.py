@@ -956,7 +956,6 @@ def openmodel():
     return m
 
 def RESULT(s1, a):
-    #consider using copy.deepcopy
     playmodel = copy.deepcopy(s1.mModel)
     newmodel = a.apply(playmodel)
     s2 = State(s1, a, newmodel, s1.mPathCost) #correct path cost will be calculated in class init
