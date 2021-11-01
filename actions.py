@@ -395,18 +395,13 @@ class Model:
                 self.sectors[sec]["civil"] = str(now)
 
                 self.mStarvation = True  # FAIL state, starvation occuring
-                print("Starvation in sector: ", self.sectors[sec]["xloc"], ",", self.sectors[sec]["yloc"])
+                # print("Starvation in sector: ", self.sectors[sec]["xloc"], ",", self.sectors[sec]["yloc"])
 
         # distribution
 
         for source in self.sectors:
             for com in self.mTrackedCommodities:
-                # test for key error
-                # print("Source: ", source)
-                # print("Com: ", com)
-                # print("Sectors.source: ", self.sectors[source])
-                # print("Tracked.com: ", self.mTrackedCommodities[com])
-                # print("All: ", self.sectors[source][self.mTrackedCommodities[com]])
+
                 thresh = float(self.sectors[source][self.mTrackedCommodities[com]])
                 if thresh > 0:
                     item = com
