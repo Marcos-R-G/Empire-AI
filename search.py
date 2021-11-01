@@ -17,32 +17,17 @@ import random
 #       Q.insert(actions.RESULT(s,a))
 #
 #   return
+
 def search(initial_state, limit):
-    # Q = []
-    # Q.append(initial_state)
-    # while len(Q) != 0:
-    #     s = Q.pop()
-    #     initial_state.depth += 1
-    #     # m = Model_Actions()
-    #     if actions.GOAL(s):
-    #         # print(s.depth)
-    #         print("goal reached")
-    #         return s
-    #     # break
-    #     if s.depth >= limit:
-    #         print("max depth reached", s.depth)
-    #         continue
-    #     for a in actions.ACTION(s):
-    #         Q.append((0, actions.RESULT(s,a)))
-    #
-    # return
 
-    Q = []
-    Q.append(initial_state)
+    sz = []
+    sz.append(initial_state)
+    astate = actions.ACTION(initial_state)
+    i = 0
 
-    while len(Q) > 0:
+    while len(sz) > 0:
         initial_state.depth += 1
-        s = Q.pop()
+        s = sz.pop()
         # az = actions.ACTION(s)
 
         if actions.GOAL(s):
@@ -63,8 +48,7 @@ def search(initial_state, limit):
                     if command == "distribute":
                         print("distribute", "*", actions.change_tuple_to_string(a.mCommands[command][0]))
                     else:
-                        print("threshold", a.mCommands[command][0],
-                              actions.change_tuple_to_string(a.mCommands[command][1]),
+                        print("threshold", a.mCommands[command][0], actions.change_tuple_to_string(a.mCommands[command][1]),
                               a.mCommands[command][2])
             elif a.mGroup == "Spread1":
                 actions.SPREAD_USED = True
@@ -78,9 +62,6 @@ def search(initial_state, limit):
                               str(a.mCommands[command][1]))
                     else:
                         print("update")
-                        print("cens *")
-
-
 
     return
 
