@@ -570,6 +570,7 @@ class action:
         self.mCommands = commands
         self.mGroup = group
 
+
     def apply(self, model):
         if self.mGroup == "Designate1":
             DESIGNATE_USED = True
