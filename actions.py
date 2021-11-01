@@ -496,7 +496,7 @@ class State():
         self.mFromAction = action
         self.mModel = Model
         if action != None:
-            self.mPathCost = path_cost + action.STEP_COST(parent, self.mFromAction, self)
+            self.mPathCost = path_cost + STEP_COST(parent, self.mFromAction, self)
         else:
             self.mPathCost = path_cost
         self.depth = 1
@@ -564,12 +564,7 @@ def change_tuple_to_string(tup):
     return new_string
 
 
-
-
-
-
-class action():
-
+class action:
 
     def __init__(self, group, commands):
         self.mCommands = commands
@@ -580,23 +575,42 @@ class action():
             DESIGNATE_USED = True
             for command in self.mCommands:
                 getattr(model, command[:-1])(*self.mCommands[command])
+                # print("des", change_tuple_to_string(self.mCommands[command][0]), self.mCommands[command][1])
         elif self.mGroup == "Network1":
             NETWORK_USED = True
             for command in self.mCommands:
                 if command == "distribute":
                     getattr(model, command)(*self.mCommands[command])
+                    # print("distribute", "*", change_tuple_to_string(self.mCommands[command][0]))
                 else:
                     getattr(model, command[:-1])(*self.mCommands[command])
+                    # print("threshold", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2])
         elif self.mGroup == "Spread1":
             SPREAD_USED = True
             for command in self.mCommands:
                 getattr(model, command[:-1])(*self.mCommands[command])
+                # print("move", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2], change_tuple_to_string(self.mCommands[command][3]))
         else:
             for command in self.mCommands:
+                ##print(command)
+                ##print(*self.mCommands[command])
                 getattr(model, command)(*self.mCommands[command])
-
+                # if command == "build_ship":
+                # print("build ship", change_tuple_to_string(self.mCommands[command][0]), str(self.mCommands[command][1]))
+                # elif command == "distribute":
+                #    #print("distribute", "*", change_tuple_to_string(self.mCommands[command][0]))
+                # elif command == "threshold":
+                #    #print("threshold", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2])
+                # elif command == "designate":
+                #    #print("des", change_tuple_to_string(self.mCommands[command][0]), self.mCommands[command][1])
+                # elif command == "move": #move comm sect num path
+                #    #print("move", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2], change_tuple_to_string(self.mCommands[command][3]))
+                # else:
+                # command == "update":
+                # print("update")
+                # else:
+                #    #print(command, self.mCommands[command])
         return model
-
 
     def getGroup(self):
         return self.mGroup
@@ -604,16 +618,16 @@ class action():
     def getCommands(self):
         return self.mCommands
 
-    def STEP_COST(self, s1, a, s2):
-        sc = 0
-        commands = 0
-        for command in self.getCommands():
-            if command == "update":
-                sc += 1.0
-            else:
-                commands += 1
-        sc += commands * 0.01
-        return sc
+def STEP_COST(s1, a, s2):
+    sc = 0
+    commands = 0
+    for command in a.getCommands():
+        if command == "update":
+            sc += 1.0
+        else:
+            commands += 1
+    sc += commands * 0.01
+    return sc
 
 
 def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
@@ -623,8 +637,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
 
     sector_list = []
 
-
-
+    #   Designate1
     need_designate1 = True
     allow_designate1 = True
     city1 = 0
@@ -879,7 +892,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
     if allow_buildfishingboat:
         weight = 100
         for i in range(weight):
-            actions.append(buildfishingboat)
+            actions.append(buildfishingboat)  # ADDS TO ACTION LIST
 
     #   Update
     update = action("Update", {"update": []})
@@ -887,7 +900,6 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
         actions.append(update)  # ADD TO ACTION LIST
 
     return actions
-
 
 def GOAL(s):
     sectors = False
@@ -921,34 +933,30 @@ def openmodel():
     foutship.close()
 
     return m
-def RESULT(s1, a):  # -> s2 |returns new state with copy of model after applying commands of Action a
-    # consider using copy.deepcopy
+def RESULT(s1, a):
     playmodel = copy.deepcopy(s1.mModel)
     newmodel = a.apply(playmodel)
-    s2 = State(s1, a, newmodel, s1.mPathCost)  # correct path cost will be calculated in class init
+    s2 = State(s1, a, newmodel, s1.mPathCost)
     return s2
 
 def main():
     sectors = pickle.load(open("sectors.p", "rb"))
-    print("Sectors loaded into dictionary. ")
 
-    ships = pickle.load(open("ship_sectors.p", "rb"))
-    print("Ships loaded into dictionary. ")
+    ships = pickle.load(open("ship_sectors.p.p", "rb"))
+
+
     m = Model(sectors, ships)
 
-    ##make changes, update model, etc
-
-    ##
 
     foutsector = open("sectors.p", "wb")
     pickle.dump(m.sectors, foutsector)
     foutsector.close()
-    # print("Sectors closed. ")
 
-    foutship = open("ship_sectors.p", "wb")
+    foutship = open("ship_sectors.p.p", "wb")
     pickle.dump(m.ship_sectors, foutship)
     foutship.close()
     # print("Ships closed. ")
 
+    return m
 
-main()
+# main()
