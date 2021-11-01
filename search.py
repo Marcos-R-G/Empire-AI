@@ -1,10 +1,6 @@
 import actions
-from actions import action
-from actions import State
-from actions import Model
 import random
 
-HARDCODE = True
 
 def search(s1):
     depth_limit = 30

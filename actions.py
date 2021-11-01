@@ -6,9 +6,6 @@ import pickle
 import math
 import copy
 
-SPREAD_USED = False
-DESIGNATE_USED = False
-NETWORK_USED = False
 
 
 f = open("sectors.p", "rb")
@@ -572,44 +569,20 @@ class action:
 
     def apply(self, model):
         if self.mGroup == "Designate1":
-            DESIGNATE_USED = True
             for command in self.mCommands:
                 getattr(model, command[:-1])(*self.mCommands[command])
-                # print("des", change_tuple_to_string(self.mCommands[command][0]), self.mCommands[command][1])
         elif self.mGroup == "Network1":
-            NETWORK_USED = True
             for command in self.mCommands:
                 if command == "distribute":
                     getattr(model, command)(*self.mCommands[command])
-                    # print("distribute", "*", change_tuple_to_string(self.mCommands[command][0]))
                 else:
                     getattr(model, command[:-1])(*self.mCommands[command])
-                    # print("threshold", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2])
         elif self.mGroup == "Spread1":
-            SPREAD_USED = True
             for command in self.mCommands:
                 getattr(model, command[:-1])(*self.mCommands[command])
-                # print("move", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2], change_tuple_to_string(self.mCommands[command][3]))
         else:
             for command in self.mCommands:
-                ##print(command)
-                ##print(*self.mCommands[command])
                 getattr(model, command)(*self.mCommands[command])
-                # if command == "build_ship":
-                # print("build ship", change_tuple_to_string(self.mCommands[command][0]), str(self.mCommands[command][1]))
-                # elif command == "distribute":
-                #    #print("distribute", "*", change_tuple_to_string(self.mCommands[command][0]))
-                # elif command == "threshold":
-                #    #print("threshold", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2])
-                # elif command == "designate":
-                #    #print("des", change_tuple_to_string(self.mCommands[command][0]), self.mCommands[command][1])
-                # elif command == "move": #move comm sect num path
-                #    #print("move", self.mCommands[command][0], change_tuple_to_string(self.mCommands[command][1]), self.mCommands[command][2], change_tuple_to_string(self.mCommands[command][3]))
-                # else:
-                # command == "update":
-                # print("update")
-                # else:
-                #    #print(command, self.mCommands[command])
         return model
 
     def getGroup(self):
@@ -780,8 +753,7 @@ def ACTION(s):  # -> [a1, a2, ...] |list of possible actions to take in state s
         light = sector_list[0]
         heavy = sector_list[1]
 
-        designate1 = action("Designate1",
-                            {"designate2": [harbor, "h"], "designate3": [mine1, "m"], "designate4": [mine2, "m"],
+        designate1 = action("Designate1", {"designate2": [harbor, "h"], "designate3": [mine1, "m"], "designate4": [mine2, "m"],
                              "designate5": [light, "j"], "designate6": [heavy, "k"], "designate7": [farm1, "a"],
                              "designate8": [farm2, "a"], "designate9": [farm3, "a"]})
         if allow_designate1 and need_designate1:
